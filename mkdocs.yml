@@ -1,0 +1,121 @@
+site_name: SISGAL Documentation
+site_description: Sistema de Gestión de Asistencia y Liquidación de Nómina
+site_author: Tatiana Sánchez Sanín
+repo_url: https://github.com/sisgal-platform/sisgal-docs
+repo_name: sisgal/sisgal-docs
+
+theme:
+  name: material
+  language: es
+
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Cambiar a modo oscuro
+
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Cambiar a modo claro
+
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - navigation.instant
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+
+markdown_extensions:
+  - admonition
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  - pymdownx.emoji
+
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugins:
+  - search
+
+nav:
+
+  - Inicio: index.md
+
+  - Arquitectura:
+      - Introducción: architecture/index.md
+      - Visión General: architecture/overview.md
+      - Backend: architecture/backend.md
+      - Frontend: architecture/frontend.md
+      - Atributos de Calidad: architecture/quality-attributes.md
+      - Tácticas Arquitectónicas: architecture/tactics.md
+      - Escenarios de Calidad: architecture/scenarios.md
+
+  - Dominio:
+      - Introducción: domain/index.md
+      - Negocio: domain/business.md
+      - Empleados: domain/employee.md
+      - Asistencia: domain/attendance.md
+      - Nómina: domain/payroll.md
+      - Glosario: domain/glossary.md
+
+  - API:
+      - Introducción: api/index.md
+      - Autenticación: api/authentication.md
+      - Empleados: api/employees.md
+      - Asistencia: api/attendance.md
+      - Nómina: api/payroll.md
+
+  - ADR:
+      - Introducción: adr/index.md
+      - ADR-001 - Monolito Modular: adr/ADR-001-modular-monolith.md
+      - ADR-002 - PostgreSQL: adr/ADR-002-postgresql.md
+      - ADR-003 - React: adr/ADR-003-react.md
+
+  - Decisiones Técnicas:
+      - Introducción: decisions/index.md
+      - Stack Tecnológico: decisions/technology-stack.md
+      - Arquitectura: decisions/architecture-decisions.md
+      - Reglas del Negocio: decisions/business-rules.md
+
+  - Diagramas:
+      - Introducción: diagrams/index.md
+      - Contexto (C4): diagrams/context.md
+      - Contenedores (C4): diagrams/containers.md
+      - Componentes (C4): diagrams/components.md
+      - Base de Datos: diagrams/database.md
+      - Secuencia: diagrams/sequence.md
+
+  - Deployment:
+      - Introducción: deployment/index.md
+      - Desarrollo Local: deployment/local.md
+      - Docker: deployment/docker.md
+      - GitHub Actions: deployment/github-actions.md
+      - Producción: deployment/production.md
+
+  - Backlog:
+      - Introducción: backlog/index.md
+      - Roadmap: backlog/roadmap.md
+      - Releases: backlog/releases.md
+      - Azure DevOps: backlog/azure-devops.md
