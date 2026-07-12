@@ -4,6 +4,12 @@ site_author: Tatiana Sánchez Sanín
 repo_url: https://github.com/sisgal-platform/sisgal-docs
 repo_name: sisgal/sisgal-docs
 
+extra_javascript:
+  - https://unpkg.com/mermaid/dist/mermaid.min.js
+
+extra:
+  generator: false
+
 theme:
   name: material
   language: es
