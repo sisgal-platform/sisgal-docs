@@ -1,14 +1,8 @@
 site_name: SISGAL Documentation
 site_description: Sistema de Gestión de Asistencia y Liquidación de Nómina
 site_author: Tatiana Sánchez Sanín
-repo_url: https://github.com/sisgal-platform/sisgal-docs
+repo_url: https://github.com/sisgal/sisgal-docs
 repo_name: sisgal/sisgal-docs
-
-extra_javascript:
-  - https://unpkg.com/mermaid/dist/mermaid.min.js
-
-extra:
-  generator: false
 
 theme:
   name: material
@@ -47,6 +41,7 @@ markdown_extensions:
   - tables
   - attr_list
   - md_in_html
+
   - toc:
       permalink: true
 
@@ -54,6 +49,7 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.highlight
   - pymdownx.inlinehilite
+
   - pymdownx.tabbed:
       alternate_style: true
 
@@ -125,3 +121,36 @@ nav:
       - Roadmap: backlog/roadmap.md
       - Releases: backlog/releases.md
       - Azure DevOps: backlog/azure-devops.md
+
+  - Sprints:
+      - Introducción: sprints/index.md
+
+      - Sprint 01:
+          - Resumen: sprints/sprint-01/index.md
+          - Planning: sprints/sprint-01/planning.md
+          - Refinamientos:
+              - Refinamiento 01: sprints/sprint-01/refinement-01.md
+          - Dailies:
+              - 08/09/2026: sprints/sprint-01/dailies/2026-09-08.md
+              - 12/09/2026: sprints/sprint-01/dailies/2026-09-12.md
+          - Review: sprints/sprint-01/review.md
+          - Retrospectiva: sprints/sprint-01/retrospective.md
+
+      - Sprint 02:
+          - Resumen: sprints/sprint-02/index.md
+          - Planning: sprints/sprint-02/planning.md
+          - Refinamientos:
+              - Refinamiento 01: sprints/sprint-02/refinement-01.md
+          - Dailies:
+              - 15/09/2026: sprints/sprint-02/dailies/2026-09-15.md
+              - 19/09/2026: sprints/sprint-02/dailies/2026-09-19.md
+              - 22/09/2026: sprints/sprint-02/dailies/2026-09-22.md
+              - 26/09/2026: sprints/sprint-02/dailies/2026-09-26.md
+          - Review: sprints/sprint-02/review.md
+          - Retrospectiva: sprints/sprint-02/retrospective.md
+      
+      - Sprint 03:
+          - Resumen: sprints/sprint-03/index.md
+          - Planning: sprints/sprint-03/planning.md
+          - Refinamientos:
+              - Refinamiento 01: sprints/sprint-03/refinement-01.md
