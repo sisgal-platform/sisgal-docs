@@ -1,6 +1,7 @@
 site_name: SISGAL Documentation
 site_description: Sistema de Gestión de Asistencia y Liquidación de Nómina
 site_author: Tatiana Sánchez Sanín
+site_url: https://sisgal-platform.github.io/sisgal-docs/
 repo_url: https://github.com/sisgal/sisgal-docs
 repo_name: sisgal/sisgal-docs
 
