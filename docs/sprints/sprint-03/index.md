@@ -5,51 +5,50 @@
 | Campo | Información |
 |---|---|
 | **Sprint** | Sprint 03 |
-| **Periodo** | 27/09/2026 – 11/10/2026 |
-| **Duración** | 2 semanas |
+| **Periodo** | 28/09/2026 – 04/10/2026 |
+| **Duración** | 1 semana |
 | **Estado** | En progreso |
-| **Historias de usuario** | Pendiente de definir |
-| **Objetivo** | Pendiente de definir |
+| **Historias de usuario** | 6 |
+| **Objetivo** | Gestión de préstamos, incapacidades y consultas de asistencia |
 
 ## Objetivo del Sprint
 
-> Pendiente de definir durante las sesiones de Refinamiento y Planning.
-
-El objetivo del Sprint 03 será establecido a partir de las historias de usuario priorizadas y seleccionadas por el equipo, teniendo en cuenta los avances obtenidos durante los Sprints anteriores.
+Desarrollar funcionalidades relacionadas con la gestión de préstamos e incapacidades de empleados, así como consultas de asistencia, dando continuidad a los módulos desarrollados durante los Sprints anteriores.
 
 ## Historias de usuario
 
-Las historias de usuario que harán parte del Sprint serán definidas durante las sesiones de Refinamiento y Planning.
-
 | ID | Historia de usuario | Responsable | Estado |
 |---|---|---|---|
-| Pendiente | Pendiente | Pendiente | Pendiente |
-| Pendiente | Pendiente | Pendiente | Pendiente |
-| Pendiente | Pendiente | Pendiente | Pendiente |
+| HU42 | Consultar incapacidades | Mario Ramos | En progreso |
+| HU11 | Registrar préstamos a empleados | Tatiana Sanchez | En progreso |
+| HU12 | Registrar incapacidades de empleados | Mario Ramos | En progreso |
+| HU04 | Consultar historial de asistencia por empleado | Marisol Perez | En progreso |
+| HU05 | Visualizar ingresos del día en tiempo real | Marisol Perez | En progreso |
+| HU41 | Consultar préstamos de empleados | Tatiana Sanchez | En progreso |
 
 ## Ceremonias
 
 - [Refinamiento 01](refinement-01.md)
 - [Planning](planning.md)
-- [Daily — Pendiente](dailies/)
+- [Daily — 29/09/2026](dailies/2026-09-29.md)
 - [Review](review.md) — Pendiente
 - [Retrospectiva](retrospective.md) — Pendiente
 
 ## Alcance
 
-El alcance del Sprint 03 será definido durante la Planning, tomando como base las historias de usuario revisadas y refinadas previamente.
+El Sprint 03 comprende seis historias de usuario relacionadas con la gestión y consulta de préstamos e incapacidades, así como con la consulta de información de asistencia.
 
 El detalle de las tareas técnicas asociadas a cada historia será gestionado mediante Azure DevOps.
 
 ## Dependencias
 
-Las dependencias funcionales y técnicas serán identificadas durante el Refinamiento y la Planning.
+Las historias seleccionadas presentan dependencias principalmente con la información de empleados, los registros de asistencia y los datos de préstamos e incapacidades.
 
-Se tendrán en cuenta especialmente las funcionalidades desarrolladas durante los Sprints anteriores y aquellas que requieran integración con los módulos existentes.
+Estas dependencias serán consideradas durante la implementación y seguimiento del Sprint.
 
 ## Seguimiento
 
-El avance del Sprint será registrado mediante reuniones Daily, realizadas de acuerdo con la dinámica establecida por el equipo.
+El avance del Sprint será registrado mediante reuniones Daily.
 
 En cada Daily se documentarán:
 
@@ -69,8 +68,8 @@ Al finalizar el Sprint se actualizará esta sección con las historias completad
 
 | Ceremonia | Estado | Registro |
 |---|---|---|
-| Refinamiento | Pendiente | [Refinamiento 01](refinement-01.md) |
-| Planning | Pendiente | [Planning](planning.md) |
-| Daily | En progreso | [Dailies](dailies/) |
+| Refinamiento | Completado | [Refinamiento 01](refinement-01.md) |
+| Planning | Completado | [Planning](planning.md) |
+| Daily | En progreso | [Dailies](dailies/2026-09-29.md) |
 | Review | Pendiente | [Review](review.md) |
 | Retrospectiva | Pendiente | [Retrospectiva](retrospective.md) |
