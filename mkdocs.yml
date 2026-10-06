@@ -155,3 +155,19 @@ nav:
           - Planning: sprints/sprint-03/planning.md
           - Refinamientos:
               - Refinamiento 01: sprints/sprint-03/refinement-01.md
+          - Dailies:
+              - 29/09/2026: sprints/sprint-03/dailies/2026-09-29.md
+              - 03/10/2026: sprints/sprint-03/dailies/2026-10-03.md
+          - Review: sprints/sprint-03/review.md
+          - Retrospectiva: sprints/sprint-03/retrospective.md
+      
+      - Sprint 04:
+          - Resumen: sprints/sprint-04/index.md
+          - Planning: sprints/sprint-04/planning.md
+          - Refinamientos:
+              - Refinamiento 01: sprints/sprint-04/refinement-01.md
+          - Dailies:
+              - 06/10/2026: sprints/sprint-04/dailies/2026-10-06.md
+              - 10/10/2026: sprints/sprint-04/dailies/2026-10-10.md
+          - Review: sprints/sprint-04/review.md
+          - Retrospectiva: sprints/sprint-04/retrospective.md
