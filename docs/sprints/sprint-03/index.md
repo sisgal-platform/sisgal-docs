@@ -7,7 +7,7 @@
 | **Sprint** | Sprint 03 |
 | **Periodo** | 28/09/2026 – 04/10/2026 |
 | **Duración** | 1 semana |
-| **Estado** | En progreso |
+| **Estado** | Completado |
 | **Historias de usuario** | 6 |
 | **Objetivo** | Gestión de préstamos, incapacidades y consultas de asistencia |
 
@@ -19,57 +19,97 @@ Desarrollar funcionalidades relacionadas con la gestión de préstamos e incapac
 
 | ID | Historia de usuario | Responsable | Estado |
 |---|---|---|---|
-| HU42 | Consultar incapacidades | Mario Ramos | En progreso |
-| HU11 | Registrar préstamos a empleados | Tatiana Sanchez | En progreso |
-| HU12 | Registrar incapacidades de empleados | Mario Ramos | En progreso |
-| HU04 | Consultar historial de asistencia por empleado | Marisol Perez | En progreso |
-| HU05 | Visualizar ingresos del día en tiempo real | Marisol Perez | En progreso |
-| HU41 | Consultar préstamos de empleados | Tatiana Sanchez | En progreso |
+| HU42 | Consultar incapacidades | Mario Ramos | Completada |
+| HU11 | Registrar préstamos a empleados | Tatiana Sanchez | Completada |
+| HU12 | Registrar incapacidades de empleados | Mario Ramos | Completada |
+| HU04 | Consultar historial de asistencia por empleado | Marisol Perez | Completada |
+| HU05 | Visualizar ingresos del día en tiempo real | Marisol Perez | Completada |
+| HU41 | Consultar préstamos de empleados | Tatiana Sanchez | Completada |
+
+## Alcance del Sprint
+
+El Sprint 03 comprendió seis historias de usuario relacionadas con la gestión y consulta de préstamos e incapacidades, así como con la consulta de información de asistencia.
+
+Las funcionalidades desarrolladas fueron:
+
+- Consulta de incapacidades de empleados.
+- Registro de préstamos a empleados.
+- Registro de incapacidades de empleados.
+- Consulta del historial de asistencia por empleado.
+- Visualización de los ingresos del día en tiempo real.
+- Consulta de préstamos de empleados.
+
+El detalle de las tareas técnicas asociadas a cada historia fue gestionado mediante Azure DevOps.
+
+## Organización del trabajo
+
+| Integrante | Historias asignadas |
+|---|---|
+| Mario Ramos | HU42, HU12 |
+| Marisol Perez | HU04, HU05 |
+| Tatiana Sanchez | HU11, HU41 |
+
+Cada integrante fue responsable del desarrollo y seguimiento de las historias asignadas durante el Sprint.
+
+## Seguimiento
+
+El avance del Sprint fue realizado mediante reuniones Daily, en las cuales se revisaron los avances, próximos pasos, bloqueos y dependencias de las historias de usuario.
+
+Se realizaron seguimientos durante el Sprint y no se presentaron bloqueos que impidieran completar las historias comprometidas.
+
+## Resultado del Sprint
+
+El Sprint 03 finalizó con las seis historias de usuario comprometidas completadas.
+
+El incremento desarrollado permitió ampliar las funcionalidades de SISGAL relacionadas con la gestión de novedades y las consultas de asistencia.
+
+Entre los principales resultados se encuentran:
+
+- Registro y consulta de préstamos de empleados.
+- Registro y consulta de incapacidades.
+- Consulta del historial de asistencia por empleado.
+- Consulta de los ingresos registrados durante la jornada.
+- Integración de las nuevas funcionalidades con los módulos desarrollados en Sprints anteriores.
+
+## Cumplimiento del objetivo
+
+El objetivo definido para el Sprint fue cumplido.
+
+Las funcionalidades planificadas fueron desarrolladas y las historias de usuario seleccionadas alcanzaron el estado de completadas al finalizar el Sprint.
+
+## Dependencias
+
+Durante el desarrollo se tuvieron en cuenta las dependencias con:
+
+- Información de empleados.
+- Registros de asistencia.
+- Préstamos registrados.
+- Incapacidades registradas.
+- Funcionalidades desarrolladas en Sprints anteriores.
+
+Estas dependencias no impidieron el cumplimiento del alcance establecido.
 
 ## Ceremonias
 
 - [Refinamiento 01](refinement-01.md)
 - [Planning](planning.md)
 - [Daily — 29/09/2026](dailies/2026-09-29.md)
-- [Review](review.md) — Pendiente
-- [Retrospectiva](retrospective.md) — Pendiente
+- [Daily — 03/10/2026](dailies/2026-10-03.md)
+- [Review](review.md)
+- [Retrospectiva](retrospective.md)
 
-## Alcance
+## Resumen del Sprint
 
-El Sprint 03 comprende seis historias de usuario relacionadas con la gestión y consulta de préstamos e incapacidades, así como con la consulta de información de asistencia.
+| Indicador | Resultado |
+|---|---|
+| Historias comprometidas | 6 |
+| Historias completadas | 6 |
+| Historias pendientes | 0 |
+| Bloqueos críticos | 0 |
+| Cumplimiento del objetivo | Sí |
 
-El detalle de las tareas técnicas asociadas a cada historia será gestionado mediante Azure DevOps.
+## Estado final
 
-## Dependencias
+**Sprint completado satisfactoriamente.**
 
-Las historias seleccionadas presentan dependencias principalmente con la información de empleados, los registros de asistencia y los datos de préstamos e incapacidades.
-
-Estas dependencias serán consideradas durante la implementación y seguimiento del Sprint.
-
-## Seguimiento
-
-El avance del Sprint será registrado mediante reuniones Daily.
-
-En cada Daily se documentarán:
-
-- Avances realizados.
-- Próximos pasos.
-- Estado de las historias.
-- Bloqueos o impedimentos.
-- Acuerdos y acciones pendientes.
-
-## Resultado del Sprint
-
-> Pendiente de registrar al finalizar el Sprint.
-
-Al finalizar el Sprint se actualizará esta sección con las historias completadas, el incremento desarrollado y los principales resultados obtenidos.
-
-## Ceremonias y resultados
-
-| Ceremonia | Estado | Registro |
-|---|---|---|
-| Refinamiento | Completado | [Refinamiento 01](refinement-01.md) |
-| Planning | Completado | [Planning](planning.md) |
-| Daily | En progreso | [Dailies](dailies/2026-09-29.md) |
-| Review | Pendiente | [Review](review.md) |
-| Retrospectiva | Pendiente | [Retrospectiva](retrospective.md) |
+Las funcionalidades desarrolladas quedan disponibles como parte del incremento del producto y sirven como base para continuar con el desarrollo de los siguientes módulos y funcionalidades de SISGAL.
