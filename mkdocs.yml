@@ -171,3 +171,14 @@ nav:
               - 10/10/2026: sprints/sprint-04/dailies/2026-10-10.md
           - Review: sprints/sprint-04/review.md
           - Retrospectiva: sprints/sprint-04/retrospective.md
+    
+      - Sprint 05:
+          - Resumen: sprints/sprint-05/index.md
+          - Planning: sprints/sprint-05/planning.md
+          - Refinamientos:
+              - Refinamiento 01: sprints/sprint-05/refinement-01.md
+          - Dailies:
+              - 13/10/2026: sprints/sprint-05/dailies/2026-10-13.md
+              - 17/10/2026: sprints/sprint-05/dailies/2026-10-17.md
+          - Review: sprints/sprint-05/review.md
+          - Retrospectiva: sprints/sprint-05/retrospective.md 

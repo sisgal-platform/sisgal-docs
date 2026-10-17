@@ -7,15 +7,18 @@
 | **Sprint** | Sprint 04 |
 | **Periodo** | 05/10/2026 – 11/10/2026 |
 | **Duración** | 1 semana |
-| **Estado** | En progreso |
-| **Historias de usuario** | 11 |
+| **Estado** | Completado |
+| **Historias planificadas** | 11 |
+| **Historias completadas** | 9 |
+| **Historias trasladadas** | 2 |
+| **Cumplimiento del alcance** | 81,8 % |
 | **Objetivo** | Parametrización y liquidación de nómina |
 
 ## Objetivo del Sprint
 
-Desarrollar funcionalidades relacionadas con la parametrización de los conceptos de nómina y el proceso de liquidación de empleados, dando continuidad a las funcionalidades de empleados, asistencia, préstamos e incapacidades desarrolladas durante los Sprints anteriores.
+Desarrollar funcionalidades relacionadas con la parametrización de los conceptos de nómina, la gestión de horarios y los cálculos requeridos para la liquidación de empleados, así como las consultas y los comprobantes asociados a sus resultados.
 
-El Sprint busca avanzar en la configuración de parámetros laborales y legales, así como en los cálculos requeridos para la liquidación de nómina y la consulta de sus resultados.
+El Sprint buscó dar continuidad a las funcionalidades de empleados, asistencia y novedades desarrolladas durante las iteraciones anteriores, avanzando en la configuración de parámetros laborales y legales y en los componentes necesarios para el proceso de liquidación.
 
 ## Historias de usuario
 
@@ -23,121 +26,60 @@ El Sprint busca avanzar en la configuración de parámetros laborales y legales,
 
 | ID | Historia de usuario | Estado |
 |---|---|---|
-| HU39 | Configurar parámetros de nómina - Jornada laboral | En progreso |
-| HU39 | Configurar parámetros de nómina - Recargos laborales | En progreso |
-| HU37 | Configurar parámetros de nómina - Descuentos legales | En progreso |
+| HU39 | Configurar parámetros de nómina - Jornada laboral | Completada |
+| HU39 | Configurar parámetros de nómina - Recargos laborales | Completada |
+| HU37 | Configurar parámetros de nómina - Descuentos legales | Completada |
 
 ### Mario Ramos
 
 | ID | Historia de usuario | Estado |
 |---|---|---|
-| HU20 | Consultar liquidaciones de empleados | En progreso |
-| HU09 | Modificar horario laboral de empleado | En progreso |
-| HU30 | Consulta de comprobante detallado de nómina | En progreso |
+| HU20 | Consultar liquidaciones de empleados | Completada |
+| HU09 | Modificar horario laboral de empleado | Completada |
+| HU30 | Consultar comprobante detallado de nómina | Completada |
 
 ### Tatiana Sanchez
 
 | ID | Historia de usuario | Estado |
 |---|---|---|
-| HU10 | Descontar cuotas de préstamos automáticamente | En progreso |
-| HU14 | Clasificar tipos de horas trabajadas | En progreso |
-| HU15 | Calcular auxilio de transporte | En progreso |
-| HU16 | Calcular primas | En progreso |
-| HU17 | Calcular deducciones legales | En progreso |
+| HU10 | Descontar cuotas de préstamos automáticamente | Trasladada al Sprint 05 |
+| HU14 | Clasificar tipos de horas trabajadas | Completada |
+| HU15 | Calcular auxilio de transporte | Completada |
+| HU16 | Calcular primas | Trasladada al Sprint 05 |
+| HU17 | Calcular deducciones legales | Completada |
 
-## Alcance del Sprint
+## Alcance ejecutado
 
-El Sprint 04 comprende funcionalidades orientadas principalmente a la configuración de parámetros de nómina y al cálculo y consulta de los resultados de liquidación.
+El Sprint permitió avanzar en tres áreas principales. En primer lugar, se completaron las funcionalidades de parametrización relacionadas con la jornada laboral, los recargos y los descuentos legales. En segundo lugar, se finalizaron las funcionalidades de modificación de horarios y consulta de liquidaciones y comprobantes. Finalmente, se completaron los cálculos relacionados con la clasificación de horas trabajadas, el auxilio de transporte y las deducciones legales.
 
-El alcance incluye:
-
-### Parametrización de nómina
-
-- Configuración de la jornada laboral.
-- Configuración de recargos laborales.
-- Configuración de descuentos legales.
-
-### Gestión de horarios
-
-- Modificación del horario laboral de los empleados.
-
-### Liquidación de nómina
-
-- Consulta de liquidaciones de empleados.
-- Descuento automático de cuotas de préstamos.
-- Clasificación de tipos de horas trabajadas.
-- Cálculo del auxilio de transporte.
-- Cálculo de primas.
-- Cálculo de deducciones legales.
-
-### Comprobantes
-
-- Consulta del comprobante detallado de nómina.
-
-El detalle de las tareas técnicas asociadas a cada historia será gestionado mediante Azure DevOps.
-
-## Organización del trabajo
-
-La asignación de historias se realizó de acuerdo con las responsabilidades definidas para cada integrante y considerando la relación entre las funcionalidades de parametrización, cálculo y consulta de nómina.
-
-| Integrante | Historias asignadas |
-|---|---|
-| **Marisol Perez** | HU39 - Jornada laboral, HU39 - Recargos laborales, HU37 - Descuentos legales |
-| **Mario Ramos** | HU20 - Consulta de liquidaciones, HU09 - Modificación de horario laboral, HU30 - Comprobante detallado de nómina |
-| **Tatiana Sanchez** | HU10 - Descuento automático de préstamos, HU14 - Clasificación de horas, HU15 - Auxilio de transporte, HU16 - Primas, HU17 - Deducciones legales |
-
-## Dependencias identificadas
-
-Las historias seleccionadas presentan dependencias con funcionalidades desarrolladas durante los Sprints anteriores y entre los diferentes componentes del proceso de liquidación.
-
-| Historia | Dependencia |
-|---|---|
-| HU39 - Jornada laboral | Configuración requerida para determinar la jornada de los empleados. |
-| HU39 - Recargos laborales | Parámetros laborales utilizados durante la clasificación y liquidación de horas. |
-| HU37 - Descuentos legales | Parámetros necesarios para calcular las deducciones de nómina. |
-| HU20 | Información generada durante el proceso de liquidación de nómina. |
-| HU09 | Información del empleado y configuración de horarios. |
-| HU30 | Resultado de la liquidación de nómina. |
-| HU10 | Préstamos registrados y cuotas pendientes de los empleados. |
-| HU14 | Registros de asistencia y parámetros de jornada y recargos. |
-| HU15 | Información salarial y condiciones del empleado. |
-| HU16 | Información salarial y periodo de liquidación. |
-| HU17 | Salario base y parámetros de descuentos legales. |
-
-## Seguimiento
-
-El avance del Sprint será realizado mediante reuniones Daily, en las cuales se revisarán:
-
-- Avances realizados.
-- Próximos pasos.
-- Estado de las historias.
-- Dependencias entre funcionalidades.
-- Bloqueos o impedimentos.
-- Acuerdos y acciones pendientes.
-
-## Riesgos
-
-- Dependencias entre las funcionalidades de parametrización y los cálculos de nómina.
-- Dependencia de información de asistencia, préstamos y empleados para realizar los cálculos.
-- Tiempo reducido del Sprint para completar las funcionalidades seleccionadas.
-- Posibles ajustes en las reglas de negocio durante la implementación de los cálculos.
+Las historias HU10 y HU16 no se completaron dentro del periodo establecido. Por lo tanto, se trasladaron al Sprint 05 para dar continuidad a su desarrollo.
 
 ## Resultado del Sprint
 
-> Pendiente de registrar al finalizar el Sprint.
+Al finalizar el Sprint 04, se completaron nueve de las once historias de usuario planificadas, lo que representa un cumplimiento del 81,8 % del alcance comprometido.
 
-Al finalizar el Sprint se actualizará esta sección con las historias completadas, el incremento desarrollado y los principales resultados obtenidos.
+El incremento obtenido amplió las capacidades de SISGAL en materia de parametrización de nómina, gestión de horarios, clasificación de horas, cálculos y consulta de resultados de liquidación.
 
-## Ceremonias
+Las dos historias pendientes corresponden al descuento automático de cuotas de préstamos y al cálculo de primas. Ambas se mantienen identificadas para su planificación y ejecución en el Sprint 05.
+
+## Seguimiento de las ceremonias
+
+La documentación del Sprint se organiza de la siguiente manera:
 
 - [Refinamiento 01](refinement-01.md)
 - [Planning](planning.md)
-- Daily — Pendiente
-- Review — Pendiente
-- Retrospectiva — Pendiente
+- [Daily 01](dailies/daily-01.md)
+- [Daily 02](dailies/daily-02.md)
+- [Daily 03](dailies/daily-03.md)
+- [Review](review.md)
+- [Retrospectiva](retrospective.md)
 
-## Estado actual
+Los archivos Daily deben corresponder únicamente a las reuniones que efectivamente se realizaron.
 
-**Sprint en progreso.**
+## Conclusiones
 
-El equipo inició el desarrollo de las historias seleccionadas el 05/10/2026.
+El Sprint 04 permitió completar la mayor parte de las funcionalidades planificadas y avanzar en la integración de los componentes relacionados con la parametrización y el cálculo de nómina. El traslado de dos historias al Sprint 05 permite mantener la trazabilidad del trabajo pendiente y establecer una base clara para la siguiente iteración.
+
+Las oportunidades de mejora identificadas se centran en la estimación del alcance, el seguimiento de las dependencias y la inclusión de tiempo suficiente para la validación de las funcionalidades desarrolladas.
+
+**Estado final: Sprint completado.**
