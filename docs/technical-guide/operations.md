@@ -17,7 +17,7 @@ La [vista de despliegue](../diagrams/deployment.md) muestra los servicios y depe
 2. Ejecutar lint, pruebas, generar el reporte de cobertura y compilar la aplicación afectada.
 3. Ejecutar el análisis de Sonar y exigir que su Quality Gate sea aprobado.
 4. Detener el flujo si falla una validación o no se alcanza la cobertura mínima acordada.
-5. Al integrar cambios en la rama de despliegue acordada, publicar solo la aplicación afectada: frontend en Vercel o Backend Core en Render.
+5. Al integrar cambios en `develop`, publicar solo la aplicación afectada en sus destinos de pruebas: frontend como Preview en Vercel o Backend Core en un servicio de pruebas de Render.
 6. Revisar el resultado del despliegue y comprobar la aplicación desde la URL de su entorno.
 
 Este es un diseño pendiente de implementación. La rama exacta, el umbral de cobertura, la instancia y proyectos de Sonar, los nombres de secretos, las condiciones de despliegue y los pasos de reversión deben confirmarse antes de activar los workflows.
