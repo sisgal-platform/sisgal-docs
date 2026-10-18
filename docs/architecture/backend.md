@@ -50,9 +50,9 @@ Cada módulo contiene sus propios:
 
 ## Persistencia
 
-La persistencia de la información se implementa mediante PostgreSQL utilizando Prisma ORM.
+La arquitectura contempla dos bases de datos independientes, ambas PostgreSQL: la base principal para los datos del sistema y la base de auditoría para logs y trazabilidad. La persistencia del core se implementa mediante Prisma ORM.
 
-El acceso a la base de datos se encuentra encapsulado en la capa de infraestructura, evitando dependencias directas desde la lógica del negocio.
+El acceso a la base principal se encuentra encapsulado en la capa de infraestructura, evitando dependencias directas desde la lógica del negocio.
 
 ---
 
