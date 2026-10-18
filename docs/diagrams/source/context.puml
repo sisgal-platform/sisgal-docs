@@ -12,7 +12,7 @@ System_Ext(external_api, "Sistemas externos", "Consumen información vía API")
 Rel(admin, system, "Usa el sistema")
 Rel(employee, system, "Registra asistencia")
 
-Rel(system, biometric, "Recibe datos de asistencia")
+Rel(biometric, system, "Envía registros de asistencia")
 Rel(system, external_api, "Expone API REST")
 
 @enduml
