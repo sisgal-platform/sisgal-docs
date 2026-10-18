@@ -17,7 +17,7 @@ Este diagrama amplía el único backend implementado en SISGAL: el Backend Core,
 
 ## Flujo de datos
 
-El Backend Core atiende las solicitudes REST del frontend y usa la base principal PostgreSQL para las operaciones del sistema. El acceso del frontend a la base de datos se realiza solo mediante la API; el cliente Supabase del frontend se utiliza para autenticación.
+El Backend Core atiende las solicitudes REST del frontend y usa la base principal PostgreSQL para las operaciones del sistema. El frontend usa Supabase JS para autenticación y no accede directamente a la base de datos.
 
 El diseño de auditoría se describe en [Modelo de datos de auditoría](database.md), pero la base independiente aún no está conectada y no se dibuja persistencia activa desde el módulo propuesto.
 
