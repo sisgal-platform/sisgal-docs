@@ -18,6 +18,4 @@ El diagrama presenta SISGAL desde fuera: quién interactúa con la plataforma y 
 
 - El administrador y el empleado usan SISGAL para las tareas descritas en sus responsabilidades.
 - SISGAL expone una API REST para que sistemas externos consuman información.
-- La integración con el dispositivo biométrico permite recibir registros de asistencia.
-
-> **Punto por confirmar:** en el diagrama, la flecha de la relación de asistencia va de SISGAL hacia el dispositivo, aunque su etiqueta dice que SISGAL recibe datos. El sentido de la flecha y el texto no coinciden; conviene confirmar cuál debe corregirse.
+- El dispositivo biométrico envía registros de asistencia a SISGAL.
