@@ -10,11 +10,9 @@ La solución integra en una única plataforma los procesos de registro de asiste
 
 ## Estilo arquitectónico
 
-SISGAL adopta una **arquitectura de monolito modular**, en la que el sistema se organiza mediante módulos funcionales independientes que comparten una única base de código y un único proceso de ejecución.
+El **backend core** de SISGAL adopta una arquitectura de monolito modular: sus módulos funcionales comparten una base de código y se despliegan como una aplicación integrada. El core implementa la lógica principal del sistema.
 
-Cada módulo encapsula sus responsabilidades, reglas de negocio y componentes de infraestructura, favoreciendo la mantenibilidad y reduciendo el acoplamiento entre funcionalidades.
-
-Este enfoque permite obtener muchas de las ventajas de una arquitectura modular sin asumir la complejidad operativa que implica una arquitectura basada en microservicios.
+La conexión con el dispositivo biométrico se realiza mediante un microservicio de backend independiente. Por tanto, SISGAL tiene dos servicios de backend, pero la decisión de monolito modular aplica solamente al core.
 
 ---
 
@@ -34,12 +32,13 @@ Durante el diseño del sistema se definieron los siguientes principios arquitect
 
 ## Organización general
 
-El sistema se encuentra dividido en dos aplicaciones principales:
+La solución contempla estas aplicaciones y servicios:
 
 - Frontend desarrollado en React.
-- Backend desarrollado en NestJS.
+- Backend core desarrollado en NestJS, organizado como monolito modular.
+- Microservicio de backend dedicado a la conexión con el dispositivo biométrico.
 
-Ambas aplicaciones se comunican mediante una API REST.
+El frontend se comunica con el core mediante una API REST.
 
 La información es persistida en PostgreSQL mediante Prisma ORM.
 
@@ -47,7 +46,8 @@ La información es persistida en PostgreSQL mediante Prisma ORM.
 
 ## Arquitectura de alto nivel
 
-> **Pendiente:** Diagrama de contexto (C4 - Nivel 1)
+> [Diagrama de contexto (C4, Nivel 1)](../diagrams/context.md)
+> [Diagrama de contenedores (C4, Nivel 2)](../diagrams/containers.md)
 
 ## Componentes principales
 
@@ -56,9 +56,9 @@ Actualmente el sistema está compuesto por los siguientes componentes:
 | Componente | Responsabilidad |
 |------------|-----------------|
 | Frontend | Interfaz de usuario |
-| Backend | Procesamiento de reglas de negocio |
+| Backend core | Procesamiento de las reglas principales de negocio mediante módulos funcionales |
 | Base de datos | Persistencia de información |
-| Servicio biométrico | Integración con dispositivos de asistencia |
+| Microservicio de integración biométrica | Conexión con el dispositivo biométrico |
 
 ## Módulos funcionales
 
