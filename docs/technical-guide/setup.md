@@ -6,10 +6,12 @@ Esta guía recoge los scripts declarados en los manifiestos de frontend y backen
 
 | Área | Tecnologías |
 |---|---|
-| Frontend | React `^19.2.8`, React Router `^7.18.3`, TypeScript `~6.0.2`, Vite `^8.2.2`, Tailwind CSS `^3.4.19`, Axios `^1.20.0`, Supabase JS `^2.116.0`, Radix UI, Recharts y Lucide React |
+| Frontend | React `^19.2.8`, React Router `^7.18.3`, TypeScript `~6.0.2`, Vite `^8.2.2`, Tailwind CSS `^3.4.19`, Axios `^1.20.0`, Supabase JS `^2.116.0` (autenticación), Radix UI, Recharts y Lucide React |
 | Pruebas frontend | Vitest `^5.0.0`, Testing Library, jsdom y `@vitest/coverage-v8` |
 | Backend core | NestJS `^12.0.3`, TypeORM `^1.1.1`, PostgreSQL driver `pg ^8.23.0`, jose `^6.2.12`, Swagger, class-validator, class-transformer y Winston |
 | Pruebas backend core | Jest `^30.0.0`, ts-jest `^29.2.5` y Supertest |
+
+El frontend usa `@supabase/supabase-js` solo para autenticación; no accede directamente a la base de datos. React Hook Form no aparece en el manifiesto compartido y no se documenta como dependencia.
 
 Las versiones son los rangos declarados en los manifiestos compartidos. No se ha especificado una versión soportada de Node.js; verifícala en el repositorio de cada aplicación antes de preparar un entorno nuevo.
 
