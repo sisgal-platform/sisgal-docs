@@ -17,6 +17,10 @@ jobs:
   validate:
     name: Validate frontend
     runs-on: ubuntu-latest
+    env:
+      VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+      VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
+      VITE_API_URL: ${{ vars.VITE_API_URL }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
