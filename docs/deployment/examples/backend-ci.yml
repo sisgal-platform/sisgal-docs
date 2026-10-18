@@ -1,0 +1,67 @@
+name: Backend Core CI/CD template
+
+on:
+  pull_request:
+    branches: [develop]
+  push:
+    branches: [develop]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: backend-core-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate Backend Core
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js and npm
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ vars.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      # The current package script includes --fix. Use ESLint directly in CI
+      # so validation reports issues without modifying the checkout.
+      - name: Lint without applying fixes
+        run: npx eslint "{src,apps,libs,test}/**/*.ts"
+
+      - name: Test and enforce 80% global line coverage
+        run: npm run test:cov -- --coverageThreshold='{"global":{"lines":80}}'
+
+      - name: Build
+        run: npm run build
+
+      - name: Analyze with SonarQube Cloud and wait for Quality Gate
+        uses: SonarSource/sonarqube-scan-action@v8.3.0
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.organization=${{ vars.SONAR_ORGANIZATION }}
+            -Dsonar.projectKey=${{ vars.SONAR_PROJECT_KEY }}
+            -Dsonar.sources=${{ vars.SONAR_SOURCES }}
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+            -Dsonar.qualitygate.wait=true
+
+  deploy:
+    name: Deploy Backend Core to Render
+    if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+    needs: validate
+    runs-on: ubuntu-latest
+    environment: develop
+    steps:
+      - name: Trigger Render deploy hook
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: curl --fail --silent --show-error --request POST "$RENDER_DEPLOY_HOOK_URL"
