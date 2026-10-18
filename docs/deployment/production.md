@@ -7,7 +7,7 @@
 - Base principal PostgreSQL: Supabase.
 - Base PostgreSQL de auditoría: independiente, diseñada pero todavía sin conexión a SISGAL.
 
-Los pipelines y los procedimientos de publicación automática están en preparación. Los workflows de ejemplo en [GitHub Actions](github-actions.md) apuntan a una Preview de Vercel y al servicio Render enlazado con `develop`; no representan aún una configuración activa ni una aprobación de producción.
+Los pipelines y los procedimientos de publicación automática están en preparación. Los workflows de ejemplo en [GitHub Actions](github-actions.md) apuntan a una Preview de Vercel y a un servicio Render de pruebas enlazado con `develop`; no representan aún una configuración activa ni una publicación de producción.
 
 ## Antes de habilitar producción
 
