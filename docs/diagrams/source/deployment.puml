@@ -12,30 +12,23 @@ node "Vercel" as vercel {
 
 node "Render" as render {
     component "Backend Core\n(monolito modular)" as core
-    component "Microservicio de\nintegración biométrica" as integration
     component "Módulos funcionales" as modules
-    component "Audit Module\n(propuesto)" as audit
+    component "Audit Module\n(propuesto, no conectado)" as audit
 }
 
 node "Servicios de datos" as data {
     database "Base principal\nPostgreSQL / Supabase" as primary_db
-    database "Base de auditoría\nPostgreSQL\nhosting por definir" as audit_db
+    database "Base de auditoría\nPostgreSQL\n(no conectada)" as audit_db
 }
 
 cloud "Supabase Auth" as supabase_auth
-
-node "Entorno del cliente" as device {
-    component "Dispositivo biométrico" as biometric
-}
 
 client --> frontend : HTTPS
 frontend --> core : API REST / HTTPS
 frontend --> supabase_auth : Autenticación / HTTPS
 core --> modules : Ejecuta
 modules --> primary_db : Lee / escribe
-biometric --> integration : Envía marcaciones
-integration --> primary_db : Registra marcaciones
-modules ..> audit : Uso transversal previsto
-audit ..> audit_db : Persistencia por definir
+modules ..> audit : Módulo transversal previsto
+audit ..> audit_db : Persistencia futura
 
 @enduml
