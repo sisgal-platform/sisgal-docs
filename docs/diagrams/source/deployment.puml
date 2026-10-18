@@ -22,12 +22,15 @@ node "Servicios de datos" as data {
     database "Base de auditoría\nPostgreSQL\nhosting por definir" as audit_db
 }
 
+cloud "Supabase Auth" as supabase_auth
+
 node "Entorno del cliente" as device {
     component "Dispositivo biométrico" as biometric
 }
 
 client --> frontend : HTTPS
 frontend --> core : API REST / HTTPS
+frontend --> supabase_auth : Autenticación / HTTPS
 core --> modules : Ejecuta
 modules --> primary_db : Lee / escribe
 biometric --> integration : Envía marcaciones
