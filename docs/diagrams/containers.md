@@ -22,4 +22,4 @@ El diagrama desglosa SISGAL en los contenedores principales indicados y muestra 
 4. El servicio de integración registra asistencia y logs en las bases indicadas.
 5. El dispositivo biométrico envía registros de asistencia al servicio de integración.
 
-> **Aclaración de arquitectura:** SISGAL tiene dos servicios de backend: el backend core, organizado como monolito modular, y el microservicio independiente dedicado a la conexión con el dispositivo biométrico. El monolito modular aplica solamente al core. Queda por confirmar si la base de datos de auditoría es independiente de la base de datos del sistema.
+> **Aclaración de arquitectura:** SISGAL tiene dos servicios de backend: el backend core, organizado como monolito modular, y el microservicio independiente dedicado a la conexión con el dispositivo biométrico. El monolito modular aplica solamente al core. La base de datos del sistema y la base de auditoría son independientes y ambas usan PostgreSQL. La posible adopción de NoSQL para auditoría está en evaluación y no representa una decisión vigente.
