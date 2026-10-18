@@ -13,9 +13,10 @@ Cada aplicación tiene su propio workflow:
 1. En un Pull Request hacia `develop`, ejecuta análisis estático local, pruebas con cobertura mínima de líneas del 80%, compilación y análisis Sonar.
 2. La validación de Sonar espera el Quality Gate. Si falla una validación, el workflow falla.
 3. En un push a `develop`, cuando todas las validaciones pasen, se publica solo la aplicación correspondiente:
-   - Frontend React en Vercel.
-   - Backend Core NestJS en Render.
-4. El microservicio biométrico no se incluye porque no está implementado.
+   - Frontend React como Preview en Vercel.
+   - Backend Core NestJS en un servicio de pruebas de Render.
+4. Estos destinos son de pruebas, no de producción.
+5. El microservicio biométrico no se incluye porque no está implementado.
 
 Las plantillas se encuentran en [frontend-ci.yml](examples/frontend-ci.yml) y [backend-ci.yml](examples/backend-ci.yml). Están preparadas para repositorios con una aplicación en su raíz; se deben adaptar si las aplicaciones viven en un monorepo.
 
@@ -45,7 +46,7 @@ El 80% es una condición de las pruebas del workflow. Si el equipo también quie
    - `SONAR_PROJECT_KEY`: clave del proyecto Sonar.
    - `SONAR_SOURCES`: rutas reales del código fuente que se deben analizar; validar este valor con la estructura de cada repositorio.
 4. Configurar el Quality Gate y vincular el proyecto con GitHub.
-5. Añadir el estado de Sonar y el job de validación a los checks obligatorios de la rama `develop).
+5. Añadir el estado de Sonar y el job de validación a los checks obligatorios de la rama `develop`.
 
 El token de Sonar y los tokens de despliegue son secretos. No deben escribirse en los archivos YAML.
 
@@ -58,7 +59,7 @@ Para el job del frontend, agrega al entorno de GitHub Actions usado por el workf
 
 Las variables `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` y `VITE_API_URL` deben estar configuradas en Vercel y como variables de repositorio de GitHub para que el job de validación pueda compilar. Son valores públicos de cliente; no agregues la clave de servicio de Supabase al frontend.
 
-El ejemplo despliega como Preview desde `develop`. Para Render, el Deploy Hook debe apuntar a un servicio de pruebas enlazado a `develop`, separado del servicio de producción.
+El ejemplo despliega como Preview desde `develop`. Render apunta a un servicio de pruebas enlazado a `develop`, separado del servicio de producción.
 
 ### Render
 
@@ -71,7 +72,7 @@ Las variables `SUPABASE_DB_URL` y `SUPABASE_URL` permanecen configuradas en el e
 - Versión exacta de Node.js.
 - Proyectos y token de SonarQube Cloud.
 - IDs y token del proyecto Vercel.
-- Deploy Hook de Render y confirmación de la rama/environment de destino.
+- Deploy Hook del servicio Render de pruebas.
 - Reglas de protección de `develop` y aprobación de despliegues.
 - Procedimiento de rollback y verificación de salud del servicio.
 - Confirmar que Vercel no esté generando despliegues automáticos duplicados para los mismos cambios.
