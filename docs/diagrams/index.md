@@ -1,13 +1,19 @@
 # Diagramas
 
-Esta sección reúne las vistas visuales de SISGAL.
+Esta sección reúne las vistas de arquitectura y los diagramas previstos de SISGAL.
 
-## Diagramas disponibles y previstos
+## Vistas disponibles
 
 - [Contexto (C4, Nivel 1)](context.md)
 - [Contenedores (C4, Nivel 2)](containers.md)
-- [Componentes (C4, Nivel 3)](components.md) — **Pendiente**
-- [Base de datos](database.md) — **Pendiente**
-- [Secuencia](sequence.md) — **Pendiente**
+- [Componentes (C4, Nivel 3)](components.md)
+  - [Backend Core](components-backend.md)
+  - [Frontend](components-frontend.md)
+- [Despliegue de los contenedores](deployment.md)
 
-Los diagramas de contexto y contenedores están documentados con la información disponible. Los diagramas de componentes, base de datos y secuencia quedan pendientes de incorporar y validar contra la arquitectura vigente.
+## Vistas pendientes
+
+- [Base de datos](database.md): falta incorporar y validar el esquema vigente.
+- [Secuencia](sequence.md): faltan los flujos funcionales que se deben documentar.
+
+Las vistas de componentes amplían el monolito modular del Backend Core y el frontend React. El microservicio biométrico se mantiene como servicio independiente. La vista de despliegue complementa C4 y documenta Vercel para el frontend y Render para ambos servicios de backend.
