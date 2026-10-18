@@ -6,9 +6,11 @@ Configura las variables en el entorno que corresponda a cada aplicación. No inc
 
 | Variable | Uso | Tratamiento |
 |---|---|---|
-| `VITE_SUPABASE_URL` | URL del proyecto Supabase utilizada por el cliente del frontend. | Es visible en el navegador; no es una credencial secreta. |
-| `VITE_SUPABASE_ANON_KEY` | Clave anon usada por el frontend para identificar el proyecto en Supabase. | Vite la incorpora al código cliente. No es secreta; la protección de datos depende de RLS y permisos mínimos. |
-| `VITE_API_URL` | URL base de la API del backend core. | Es visible en el navegador; no es una credencial secreta. |
+| `VITE_SUPABASE_URL` | URL del proyecto Supabase usada por el cliente de autenticación. | Visible en el navegador; no es una credencial secreta. |
+| `VITE_SUPABASE_ANON_KEY` | Clave pública anon que el cliente Supabase usa para autenticación. | Vite la incorpora al código cliente; no es secreta. |
+| `VITE_API_URL` | URL base de la API REST del backend core. | Visible en el navegador; no es una credencial secreta. |
+
+El frontend usa `@supabase/supabase-js` para autenticación. **No consulta directamente las bases de datos de SISGAL**; las operaciones de datos se envían al backend core mediante la API.
 
 Vite expone las variables con prefijo `VITE_` en el código de cliente durante la compilación. No pongas contraseñas, claves privadas ni claves de servicio en variables con ese prefijo. Consulta la [guía de variables de Vite](https://vite.dev/guide/env-and-mode).
 
@@ -18,7 +20,7 @@ La clave `anon` es el formato legado de clave pública de Supabase. Supabase anu
 
 | Variable | Uso | Tratamiento |
 |---|---|---|
-| `SUPABASE_DB_URL` | Cadena de conexión PostgreSQL para el backend core. | Secreta; configúrala como credencial protegida del entorno. |
+| `SUPABASE_DB_URL` | Cadena de conexión PostgreSQL utilizada por el backend core. | Secreta; configúrala como credencial protegida del entorno. |
 | `SUPABASE_URL` | URL del proyecto Supabase. | No es una contraseña; evita publicar configuraciones internas innecesarias. |
 
 ## Archivos y entornos
