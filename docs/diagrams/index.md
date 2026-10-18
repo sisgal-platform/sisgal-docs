@@ -1,13 +1,13 @@
 # Diagramas
 
-Esta sección reúne las vistas visuales de SISGAL. La carpeta de diagramas no estaba presente en las ramas disponibles del repositorio; se crea esta estructura para recuperar su lugar en la documentación.
+Esta sección reúne las vistas visuales de SISGAL.
 
-## Diagramas previstos
+## Diagramas disponibles y previstos
 
-- [Contexto (C4)](context.md)
-- [Contenedores (C4)](containers.md)
-- [Componentes (C4)](components.md)
-- [Base de datos](database.md)
-- [Secuencia](sequence.md)
+- [Contexto (C4, Nivel 1)](context.md)
+- [Contenedores (C4, Nivel 2)](containers.md)
+- [Componentes (C4, Nivel 3)](components.md) — **Pendiente**
+- [Base de datos](database.md) — **Pendiente**
+- [Secuencia](sequence.md) — **Pendiente**
 
-> **Pendiente:** incorporar los diagramas originales del proyecto y validar que correspondan a la arquitectura vigente.
+Los diagramas de contexto y contenedores están documentados con la información disponible. Los diagramas de componentes, base de datos y secuencia quedan pendientes de incorporar y validar contra la arquitectura vigente.
