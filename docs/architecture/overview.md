@@ -2,19 +2,13 @@
 
 ## Introducción
 
-SISGAL fue diseñado como una aplicación web orientada a automatizar el proceso de gestión de asistencia y liquidación de nómina para pequeñas organizaciones del sector gastronómico colombiano.
-
-La solución integra en una única plataforma los procesos de registro de asistencia, administración de empleados y cálculo de la nómina, reduciendo la dependencia de procesos manuales y mejorando la precisión de los resultados.
-
----
+SISGAL es una aplicación web orientada a automatizar la gestión de asistencia y liquidación de nómina. La solución reúne el frontend, el Backend Core y la base PostgreSQL principal alojada en Supabase.
 
 ## Estilo arquitectónico
 
-El **backend core** de SISGAL adopta una arquitectura de monolito modular: sus módulos funcionales comparten una base de código y se despliegan como una aplicación integrada. El core implementa la lógica principal del sistema.
+El Backend Core adopta una arquitectura de monolito modular: sus módulos funcionales comparten una base de código y se despliegan como una aplicación integrada. Es el único backend implementado actualmente.
 
-La conexión con el dispositivo biométrico se realiza mediante un microservicio de backend independiente. Por tanto, SISGAL tiene dos servicios de backend, pero la decisión de monolito modular aplica solamente al core.
-
----
+La integración con el dispositivo biométrico no está implementada. La arquitectura futura y el lugar de esa integración se definirán cuando se diseñe el flujo.
 
 ## Principios de diseño
 
@@ -28,72 +22,42 @@ Durante el diseño del sistema se definieron los siguientes principios arquitect
 - Trazabilidad de la información.
 - Seguridad desde el diseño.
 
----
-
 ## Organización general
 
-La solución contempla estas aplicaciones y servicios:
+La solución implementada contempla:
 
 - Frontend desarrollado en React.
-- Backend core desarrollado en NestJS, organizado como monolito modular.
-- Microservicio de backend dedicado a la conexión con el dispositivo biométrico.
+- Backend Core desarrollado en NestJS y organizado como monolito modular.
+- Base de datos principal PostgreSQL alojada en Supabase.
+- Supabase Auth para la autenticación del frontend.
 
-El frontend se comunica con el core mediante una API REST.
+El frontend se comunica con el Backend Core mediante una API REST y no accede directamente a la base de datos. La persistencia del core utiliza TypeORM.
 
-Los datos del sistema y las marcaciones se persisten en la base principal PostgreSQL mediante TypeORM. La base de auditoría es independiente y también utiliza PostgreSQL; su flujo de escritura está pendiente de definición.
-
----
+Se prevé una base PostgreSQL independiente para auditoría y un módulo transversal reutilizable. Ninguno está conectado al sistema actualmente.
 
 ## Arquitectura de alto nivel
 
 - [Diagrama de contexto (C4, Nivel 1)](../diagrams/context.md)
 - [Diagrama de contenedores (C4, Nivel 2)](../diagrams/containers.md)
 - [Componentes (C4, Nivel 3)](../diagrams/components.md)
-- [Vista de despliegue](../diagrams/deployment.md)
+- [Vista de despliegue prevista](../diagrams/deployment.md)
 
 ## Componentes principales
 
-Actualmente el sistema está compuesto por los siguientes componentes:
-
 | Componente | Responsabilidad |
-|------------|-----------------|
-| Frontend | Interfaz de usuario |
-| Backend core | Procesamiento de las reglas principales de negocio mediante módulos funcionales |
-| Base de datos principal | Persistencia del sistema y de las marcaciones biométricas |
-| Base de datos de auditoría | Almacenamiento independiente; integración aún por definir |
-| Microservicio de integración biométrica | Conexión con el dispositivo biométrico |
+|---|---|
+| Frontend | Interfaz de usuario; autenticación mediante Supabase Auth; consume la API del core. |
+| Backend Core | API REST y lógica principal de negocio en módulos. |
+| Base de datos principal | Persistencia relacional del sistema; PostgreSQL en Supabase. |
+| Base de datos de auditoría | Diseño independiente en PostgreSQL, aún no conectado. |
+| Integración biométrica | No implementada; flujo futuro por definir. |
 
 ## Módulos funcionales
 
-La lógica del negocio se organiza en módulos independientes.
-
-Entre los principales módulos se encuentran:
-
-- Autenticación
-- Empleados
-- Asistencia
-- Jornadas laborales
-- Liquidación de nómina
-- Configuración
-
+La lógica del negocio se organiza en módulos funcionales, incluidos autenticación, empleados, asistencia, jornadas laborales, liquidación de nómina y configuración.
 
 Se propone un módulo transversal de auditoría, pero su alcance e integración todavía están por definir.
 
-Cada módulo encapsula sus casos de uso, entidades, reglas de negocio y mecanismos de persistencia según corresponda.
-
-La comunicación entre módulos se realiza mediante interfaces bien definidas, evitando dependencias innecesarias entre ellos.
-
 ## Calidad de la arquitectura
 
-El diseño arquitectónico fue guiado por atributos de calidad priorizados durante la etapa de análisis.
-
-Los principales atributos considerados fueron:
-
-- Mantenibilidad
-- Seguridad
-- Disponibilidad
-- Rendimiento
-- Escalabilidad
-- Modificabilidad
-
-Estos atributos dieron origen a las tácticas arquitectónicas implementadas y a las decisiones de diseño descritas en las siguientes secciones.
+El diseño arquitectónico fue guiado por atributos de calidad priorizados durante la etapa de análisis. Entre ellos se encuentran mantenibilidad, seguridad, disponibilidad, rendimiento, escalabilidad y modificabilidad. Las tácticas y escenarios deben mantenerse alineados con la implementación vigente.
