@@ -40,7 +40,7 @@ La solución contempla estas aplicaciones y servicios:
 
 El frontend se comunica con el core mediante una API REST.
 
-La información es persistida en PostgreSQL mediante Prisma ORM.
+La información es persistida en PostgreSQL mediante TypeORM.
 
 ---
 
