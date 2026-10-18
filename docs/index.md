@@ -4,7 +4,7 @@ Bienvenido a la documentación oficial de **SISGAL** (Sistema de Gestión de Asi
 
 SISGAL es una plataforma web desarrollada para automatizar el registro de asistencia y el cálculo de la nómina en pequeñas y medianas empresas del sector gastronómico colombiano. El sistema integra el control de asistencia mediante dispositivos biométricos con el procesamiento automatizado de la jornada laboral, permitiendo calcular de forma precisa los diferentes conceptos asociados a la liquidación de nómina conforme a la legislación colombiana vigente.
 
-Esta documentación reúne toda la información técnica necesaria para comprender la arquitectura del sistema, el dominio del negocio, las decisiones de diseño, la API, el proceso de despliegue y la evolución del proyecto.
+Esta documentación conserva las secciones existentes y suma un **manual técnico** para quienes desarrollan, configuran, despliegan o mantienen SISGAL. El manual de usuario se prepara como documento PDF independiente.
 
 ---
 
@@ -36,16 +36,7 @@ SISGAL tiene como propósito:
 
 ## Contenido
 
-La documentación está organizada en las siguientes secciones:
-
-- Arquitectura
-- Dominio del negocio
-- API
-- ADR (Architecture Decision Records)
-- Decisiones técnicas
-- Diagramas
-- Backlog
-- Deployment
+La documentación reúne las secciones de Arquitectura, Dominio, API, ADR, Decisiones Técnicas, Diagramas, Deployment, Backlog y Sprints. También incluye el [Manual técnico](technical-guide/index.md).
 
 ---
 

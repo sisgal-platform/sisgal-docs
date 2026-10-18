@@ -1,167 +1,63 @@
 # Stack Tecnológico
 
-## Introducción
+## 1. Objetivo
 
-El stack tecnológico de SISGAL está conformado por las tecnologías, frameworks, bibliotecas y herramientas seleccionadas para implementar el sistema de gestión de asistencia y liquidación de nómina.
+Este documento describe las principales tecnologías y herramientas utilizadas para desarrollar SISGAL, así como su responsabilidad dentro de la solución.
 
-La selección se realizó considerando las necesidades funcionales del proyecto, los atributos de calidad definidos, la experiencia técnica del equipo y la facilidad de mantenimiento y evolución de la solución.
+## 2. Tecnologías principales
 
-## Tecnologías principales
-
-| Capa | Tecnología | Propósito |
+| Componente | Tecnología | Responsabilidad |
 |---|---|---|
-| **Frontend** | React | Desarrollo de la interfaz de usuario. |
-| **Lenguaje frontend** | TypeScript | Tipado estático y desarrollo del frontend. |
-| **Build tool** | Vite | Desarrollo y construcción de la aplicación frontend. |
-| **UI** | Shadcn/ui | Construcción de componentes reutilizables de interfaz. |
-| **Backend** | NestJS | Desarrollo de los servicios backend. |
-| **Lenguaje backend** | TypeScript | Implementación de la lógica de negocio y servicios. |
-| **API** | REST | Comunicación entre frontend y backend. |
-| **Base de datos** | PostgreSQL | Persistencia de la información transaccional. |
-| **Autenticación** | Supabase Auth | Gestión de autenticación y sesiones de usuario. |
-| **Pruebas** | Jest | Ejecución de pruebas automatizadas. |
-| **Control de versiones** | Git | Gestión del código fuente y control de cambios. |
-| **Repositorio** | GitHub | Hospedaje de repositorios y colaboración. |
-| **CI/CD** | GitHub Actions | Automatización de procesos de integración y despliegue. |
-| **Contenedores** | Docker | Estandarización de entornos de ejecución. |
-| **Documentación** | MkDocs Material | Generación y publicación de la documentación técnica. |
-| **Gestión del trabajo** | Azure DevOps | Gestión de historias de usuario, tareas y seguimiento del proyecto. |
+| Frontend | React | Construcción de la interfaz de usuario. |
+| Lenguaje del frontend | TypeScript | Incorporar tipado estático y mejorar la mantenibilidad del código. |
+| Herramienta de construcción del frontend | Vite | Ejecutar el entorno de desarrollo y generar los artefactos de compilación. |
+| Backend | NestJS | Implementar la API y la lógica del servidor mediante módulos y servicios. |
+| Lenguaje del backend | TypeScript | Mantener tipado y consistencia en la implementación del servidor. |
+| Persistencia relacional | PostgreSQL | Almacenar información estructurada del sistema. |
+| Acceso a datos | TypeORM | Mapear entidades y gestionar operaciones sobre la base de datos desde el backend. |
+| Comunicación | API REST | Permitir la comunicación entre el frontend y el backend mediante solicitudes HTTP. |
 
-## Frontend
+## 3. Herramientas complementarias
 
-El frontend está desarrollado con **React y TypeScript**, utilizando Vite como herramienta de construcción y desarrollo.
+| Herramienta | Uso |
+|---|---|
+| Git | Control de versiones del código fuente. |
+| GitHub | Hospedaje de repositorios y colaboración en el desarrollo. |
+| Tailwind CSS | Aplicación de estilos mediante clases utilitarias, según la configuración del frontend. |
+| MkDocs Material | Organización y publicación de la documentación técnica del proyecto. |
+| Supabase | Servicio utilizado para alojar y administrar la base de datos PostgreSQL, según la configuración del entorno. |
 
-La aplicación utiliza una organización orientada a funcionalidades, donde cada módulo concentra los componentes, servicios e interfaces relacionados con su responsabilidad funcional.
+La configuración exacta de cada herramienta debe verificarse en los archivos del proyecto y en los entornos utilizados por el equipo.
 
-Los principales módulos contemplados son:
+## 4. Criterios de selección
 
-- Dashboard.
-- Asistencia.
-- Nómina.
-- Novedades.
-- Personal.
-- Reportes.
-- Configuración.
+Las tecnologías se seleccionan teniendo en cuenta los siguientes criterios:
 
-Para la construcción de la interfaz se utiliza Shadcn/ui junto con componentes propios organizados bajo un enfoque de reutilización y composición.
+- **Mantenibilidad:** facilitar la lectura, modificación y evolución del código.
+- **Modularidad:** permitir organizar las funcionalidades en componentes con responsabilidades definidas.
+- **Tipado:** detectar errores durante el desarrollo y mejorar la claridad de los contratos.
+- **Integración:** facilitar la comunicación entre la interfaz, la API y la base de datos.
+- **Persistencia e integridad:** contar con un modelo relacional para gestionar entidades y sus relaciones.
+- **Documentación y soporte:** disponer de documentación técnica para resolver problemas y mantener la solución.
 
-## Backend
+## 5. Lineamientos de uso
 
-El backend está desarrollado con **NestJS y TypeScript**.
+1. Mantener TypeScript en los componentes principales del frontend y del backend.
+2. Gestionar las dependencias mediante el administrador de paquetes definido por cada aplicación.
+3. Mantener las credenciales y variables de entorno fuera del código fuente.
+4. Utilizar Git para registrar los cambios y facilitar su revisión.
+5. Evitar incorporar dependencias nuevas sin evaluar su necesidad, compatibilidad y mantenimiento.
+6. Mantener sincronizados los contratos de la API y las funcionalidades que los consumen.
+7. Documentar cualquier cambio significativo en la selección o configuración de las tecnologías.
 
-NestJS proporciona una estructura modular para organizar los servicios y funcionalidades del sistema, permitiendo separar responsabilidades y facilitar el mantenimiento.
+## 6. Entornos y despliegue
 
-La API utiliza el estilo arquitectónico REST para exponer las operaciones requeridas por el frontend.
+Las aplicaciones y sus servicios deben configurarse mediante variables de entorno para separar los parámetros de desarrollo, pruebas y producción.
 
-Entre las funcionalidades backend se encuentran:
+La URL de la API, las credenciales de acceso a la base de datos y demás parámetros sensibles no deben codificarse directamente en el repositorio.
 
-- Autenticación.
-- Gestión de empleados.
-- Gestión de cargos.
-- Gestión de sucursales.
-- Gestión de asistencia.
-- Gestión de préstamos.
-- Gestión de incapacidades.
-- Liquidación de nómina.
-- Consultas y reportes.
+Los servicios de despliegue concretos y sus procedimientos deben documentarse en la sección correspondiente de [Despliegue](../deployment/), una vez confirmados para el entorno vigente.
 
-## Persistencia
+## 7. Mantenimiento
 
-SISGAL utiliza **PostgreSQL** como sistema de gestión de base de datos.
-
-La persistencia se organiza de acuerdo con las necesidades de los diferentes procesos del sistema, permitiendo separar la información relacionada con las marcaciones de asistencia de la información utilizada para los cálculos y resultados de nómina.
-
-La base de datos permite mantener la información necesaria para:
-
-- Empleados.
-- Cargos.
-- Sucursales.
-- Marcaciones.
-- Préstamos.
-- Incapacidades.
-- Procesos de nómina.
-- Resultados de liquidación.
-- Información de auditoría.
-
-## Pruebas
-
-Para las pruebas automatizadas se utiliza **Jest**.
-
-Las pruebas se incorporan como mecanismo de validación de la lógica implementada y buscan verificar el comportamiento esperado de los componentes y servicios del sistema.
-
-Los tipos de pruebas contemplados se documentan en la sección de pruebas del proyecto.
-
-## Control de versiones
-
-El código fuente se gestiona mediante **Git** y se aloja en **GitHub**.
-
-El flujo de trabajo contempla ramas destinadas al desarrollo y a la integración de cambios, junto con mecanismos de protección para evitar modificaciones directas sobre las ramas principales.
-
-## Integración y despliegue
-
-**GitHub Actions** se utiliza para automatizar procesos asociados a integración y despliegue.
-
-Entre los procesos automatizados se encuentra la generación y publicación de la documentación técnica mediante MkDocs.
-
-## Documentación
-
-La documentación técnica del proyecto se desarrolla utilizando **MkDocs Material**.
-
-La documentación se mantiene en un repositorio independiente y se publica mediante GitHub Pages.
-
-La estructura documental incluye:
-
-- Arquitectura.
-- Dominio.
-- API.
-- Decisiones técnicas.
-- ADR.
-- Diagramas.
-- Deployment.
-- Backlog.
-- Sprints.
-
-## Gestión del proyecto
-
-**Azure DevOps** se utiliza para gestionar el backlog y realizar seguimiento al desarrollo.
-
-La estructura de trabajo contempla:
-
-```text
-Tema
-  ↓
-Épica
-  ↓
-Historia de usuario
-  ↓
-Tarea
-```
-
-Las historias de usuario se relacionan con los Sprints y con las tareas técnicas necesarias para su implementación.
-
-## Criterios de selección
-
-La selección del stack tecnológico consideró principalmente:
-
-- Compatibilidad con los requerimientos del sistema.
-- Facilidad de mantenimiento.
-- Modularidad.
-- Disponibilidad de documentación y comunidad.
-- Integración entre las tecnologías.
-- Capacidad de evolución.
-- Experiencia técnica del equipo.
-- Compatibilidad con las necesidades de despliegue.
-- Relación con la arquitectura
-
-El stack tecnológico soporta las decisiones arquitectónicas definidas para SISGAL.
-
-En particular:
-
-- React permite implementar una interfaz modular y orientada a funcionalidades.
-- NestJS proporciona una estructura modular para el backend.
-- PostgreSQL proporciona persistencia relacional.
-- REST establece el mecanismo principal de comunicación entre frontend y backend.
-- Docker permite estandarizar los entornos de ejecución.
-- GitHub Actions automatiza procesos de integración y despliegue.
-
-Las decisiones arquitectónicas específicas se documentan en [Decisiones de Arquitectura](architecture-decisions.md).
+Si se reemplaza una tecnología o se introduce un componente nuevo, se debe actualizar este documento y revisar los ADR relacionados cuando el cambio afecte una decisión arquitectónica previamente registrada.

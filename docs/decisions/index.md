@@ -1,70 +1,37 @@
 # Decisiones Técnicas
 
-## Introducción
+## 1. Introducción
 
-Esta sección documenta las principales decisiones tomadas durante el diseño y desarrollo de SISGAL. Su propósito es registrar los criterios utilizados para seleccionar tecnologías, definir aspectos arquitectónicos y establecer reglas de negocio que afectan el comportamiento del sistema.
+Esta sección documenta las principales decisiones técnicas adoptadas durante el diseño y desarrollo de **SISGAL (Sistema de Gestión de Asistencia y Liquidación de Nómina)**, una aplicación web orientada a apoyar la administración de empleados, el registro de asistencia y el cálculo de la nómina de JS Burguer Parrilla.
 
-Las decisiones documentadas buscan proporcionar trazabilidad sobre la evolución del proyecto y servir como referencia para el equipo durante las etapas de implementación, pruebas y mantenimiento.
+El propósito de esta documentación es mantener criterios técnicos consistentes, facilitar el mantenimiento de la aplicación y proporcionar una referencia para los integrantes del equipo de desarrollo.
 
-## Tipos de decisiones
+## 2. Objetivos
 
-Las decisiones se organizan en tres categorías principales:
+- Documentar las tecnologías utilizadas en el desarrollo de SISGAL.
+- Explicar los criterios técnicos que orientan la estructura de la aplicación.
+- Establecer lineamientos para implementar y mantener las funcionalidades.
+- Identificar las reglas de negocio que deben respetarse en los procesos de asistencia y nómina.
+- Facilitar la incorporación de nuevos desarrolladores al proyecto.
 
-| Categoría | Descripción |
+## 3. Documentos de esta sección
+
+| Documento | Descripción |
 |---|---|
-| **Stack tecnológico** | Tecnologías, herramientas y frameworks seleccionados para la implementación del sistema. |
-| **Arquitectura** | Decisiones relacionadas con la estructura del sistema, distribución de responsabilidades y comunicación entre componentes. |
-| **Reglas de negocio** | Reglas y parámetros que determinan el comportamiento funcional de la gestión de asistencia, novedades y liquidación de nómina. |
+| [Stack Tecnológico](technology-stack.md) | Presenta las tecnologías, herramientas y componentes utilizados en el sistema. |
+| [Arquitectura](architecture-decisions.md) | Describe las decisiones relacionadas con la organización y comunicación de los componentes de SISGAL. |
+| [Reglas del Negocio](business-rules.md) | Documenta las reglas funcionales que orientan los procesos de asistencia, novedades y liquidación de nómina. |
 
-## Documentos
+## 4. Relación con los ADR
 
-### Stack tecnológico
+Los documentos de esta sección complementan los registros de decisiones arquitectónicas (ADR).
 
-[Stack Tecnológico](technology-stack.md)
+Mientras que los ADR registran el contexto, las alternativas evaluadas y la justificación de una decisión arquitectónica, esta sección reúne lineamientos técnicos y reglas de implementación que sirven como referencia para el desarrollo cotidiano.
 
-Documenta las tecnologías, frameworks, herramientas y servicios seleccionados para el desarrollo de SISGAL.
+Para consultar las decisiones arquitectónicas formales, visita la sección [Architecture Decision Records (ADR)](../adr/).
 
-### Decisiones de arquitectura
+## 5. Mantenimiento de la documentación
 
-[Decisiones de Arquitectura](architecture-decisions.md)
+Esta documentación debe actualizarse cuando se incorporen nuevas tecnologías, se modifique la arquitectura, cambien las reglas de negocio o se adopten criterios técnicos que afecten el funcionamiento del sistema.
 
-Documenta las principales decisiones relacionadas con la arquitectura del sistema y los criterios considerados para adoptarlas.
-
-### Reglas de negocio
-
-[Reglas de Negocio](business-rules.md)
-
-Documenta las reglas y parámetros funcionales utilizados en los procesos de asistencia, novedades y liquidación de nómina.
-
-## Relación con otras secciones
-
-Las decisiones técnicas se relacionan con diferentes partes de la documentación:
-
-```text
-Requisitos
-    ↓
-Historias de usuario
-    ↓
-Decisiones técnicas
-    ↓
-Arquitectura
-    ↓
-Implementación
-    ↓
-Pruebas
-```
-
-Las decisiones arquitectónicas se complementan con la documentación de la sección Arquitectura, mientras que las reglas de negocio se relacionan con los conceptos descritos en la sección Dominio.
-
-## Trazabilidad
-
-Las decisiones registradas en esta sección deben poder relacionarse con:
-
-- Requisitos y historias de usuario.
-- Atributos y escenarios de calidad.
-- Componentes arquitectónicos.
-- Implementaciones realizadas.
-- Pruebas del sistema.
-- Cambios posteriores en el diseño.
-
-Esta trazabilidad permite justificar las decisiones tomadas durante el desarrollo y facilita su revisión y mantenimiento.
+Las decisiones documentadas deben mantenerse alineadas con la implementación real de SISGAL. Las tecnologías o funcionalidades planeadas que aún no estén implementadas deben identificarse como pendientes y no como características finalizadas.

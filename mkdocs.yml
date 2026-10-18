@@ -63,7 +63,6 @@ plugins:
   - search
 
 nav:
-
   - Inicio: index.md
 
   - Arquitectura:
@@ -125,7 +124,6 @@ nav:
 
   - Sprints:
       - Introducción: sprints/index.md
-
       - Sprint 01:
           - Resumen: sprints/sprint-01/index.md
           - Planning: sprints/sprint-01/planning.md
@@ -136,7 +134,6 @@ nav:
               - 12/09/2026: sprints/sprint-01/dailies/2026-09-12.md
           - Review: sprints/sprint-01/review.md
           - Retrospectiva: sprints/sprint-01/retrospective.md
-
       - Sprint 02:
           - Resumen: sprints/sprint-02/index.md
           - Planning: sprints/sprint-02/planning.md
@@ -149,7 +146,6 @@ nav:
               - 26/09/2026: sprints/sprint-02/dailies/2026-09-26.md
           - Review: sprints/sprint-02/review.md
           - Retrospectiva: sprints/sprint-02/retrospective.md
-      
       - Sprint 03:
           - Resumen: sprints/sprint-03/index.md
           - Planning: sprints/sprint-03/planning.md
@@ -160,7 +156,6 @@ nav:
               - 03/10/2026: sprints/sprint-03/dailies/2026-10-03.md
           - Review: sprints/sprint-03/review.md
           - Retrospectiva: sprints/sprint-03/retrospective.md
-      
       - Sprint 04:
           - Resumen: sprints/sprint-04/index.md
           - Planning: sprints/sprint-04/planning.md
@@ -171,7 +166,6 @@ nav:
               - 10/10/2026: sprints/sprint-04/dailies/2026-10-10.md
           - Review: sprints/sprint-04/review.md
           - Retrospectiva: sprints/sprint-04/retrospective.md
-    
       - Sprint 05:
           - Resumen: sprints/sprint-05/index.md
           - Planning: sprints/sprint-05/planning.md
@@ -181,4 +175,13 @@ nav:
               - 13/10/2026: sprints/sprint-05/dailies/2026-10-13.md
               - 17/10/2026: sprints/sprint-05/dailies/2026-10-17.md
           - Review: sprints/sprint-05/review.md
-          - Retrospectiva: sprints/sprint-05/retrospective.md 
+          - Retrospectiva: sprints/sprint-05/retrospective.md
+
+  - Manual técnico:
+      - Introducción: technical-guide/index.md
+      - Instalación y entorno: technical-guide/setup.md
+      - Configuración: technical-guide/configuration.md
+      - Operación y despliegue: technical-guide/operations.md
+      - Mantenimiento: technical-guide/maintenance.md
+      - Seguridad: technical-guide/security.md
+      - Desarrollo y contribución: technical-guide/contributing.md
