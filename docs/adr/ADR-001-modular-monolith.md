@@ -1,4 +1,4 @@
-# ADR-001 — Monolito modular
+# ADR-001 — Monolito modular del core
 
 ## Estado
 
@@ -10,7 +10,7 @@ SISGAL requiere integrar diferentes funcionalidades relacionadas con la gestión
 
 Para organizar estas funcionalidades se requiere una arquitectura que permita separar las responsabilidades del software, facilitar su mantenimiento y controlar las dependencias entre los componentes. Adicionalmente, el proyecto cuenta con un equipo de tres desarrolladores y un alcance que debe implementarse de manera incremental dentro del periodo académico establecido.
 
-En este contexto, se consideró necesario adoptar una arquitectura que facilite la organización modular del backend sin introducir la complejidad operativa asociada con la administración de múltiples servicios independientes.
+En este contexto, se adopta el monolito modular para organizar el backend principal (core) de SISGAL. El sistema también cuenta con un microservicio de backend dedicado a la conexión con el dispositivo biométrico. Esta decisión arquitectónica se limita al core y no implica que el servicio de integración forme parte del mismo despliegue.
 
 ## Alternativas consideradas
 
@@ -22,9 +22,9 @@ En este contexto, se consideró necesario adoptar una arquitectura que facilite 
 
 ## Decisión
 
-Se adopta una **arquitectura de monolito modular para el backend de SISGAL**, desarrollado con NestJS y TypeScript.
+Se adopta una **arquitectura de monolito modular para el backend principal (core) de SISGAL**, desarrollado con NestJS y TypeScript. El backend de SISGAL cuenta además con un microservicio independiente dedicado a la conexión con el dispositivo biométrico. Este ADR define la arquitectura interna del core; no clasifica al microservicio de integración como un módulo del core.
 
-La aplicación se organiza en módulos funcionales que agrupan responsabilidades relacionadas con el dominio. Cada módulo debe mantener límites claros y exponer únicamente las operaciones necesarias para la interacción con otros módulos.
+La aplicación core se organiza en módulos funcionales que agrupan responsabilidades relacionadas con el dominio. Cada módulo debe mantener límites claros y exponer únicamente las operaciones necesarias para la interacción con otros módulos.
 
 La estructura interna se apoya en la separación de responsabilidades entre dominio, aplicación e infraestructura, según las necesidades de cada módulo. Esta organización busca evitar que las reglas de negocio dependan directamente de los detalles técnicos de persistencia o comunicación.
 
@@ -32,11 +32,11 @@ La comunicación entre los módulos se realizará de manera directa y síncrona,
 
 ## Justificación
 
-La arquitectura de monolito modular se considera adecuada porque permite mantener una solución integrada y, simultáneamente, organizar el código de acuerdo con las responsabilidades funcionales de SISGAL.
+La arquitectura de monolito modular se considera adecuada para el core porque permite organizar el código según las responsabilidades funcionales de negocio, manteniendo sus módulos dentro de una aplicación integrada. La conexión con el dispositivo biométrico se atiende en un microservicio independiente.
 
 La elección favorece la separación de responsabilidades, facilita la comprensión del sistema y permite desarrollar y probar módulos de manera diferenciada sin asumir la complejidad operativa de una infraestructura distribuida.
 
-Asimismo, la arquitectura es coherente con el alcance académico del proyecto, el tamaño del equipo y la necesidad de integrar funcionalidades que comparten información y reglas de negocio, especialmente durante el cálculo y la liquidación de nómina.
+Asimismo, esta arquitectura para el core es coherente con el alcance académico del proyecto, el tamaño del equipo y la necesidad de integrar funcionalidades que comparten información y reglas de negocio, especialmente durante el cálculo y la liquidación de nómina. El microservicio de integración mantiene aparte la responsabilidad de conectarse con el dispositivo biométrico.
 
 ## Consecuencias
 
@@ -45,16 +45,16 @@ Asimismo, la arquitectura es coherente con el alcance académico del proyecto, e
 - Se establecen límites funcionales que facilitan la organización y el mantenimiento del código.
 - Se favorece la reutilización de componentes y servicios internos.
 - Se simplifica la comunicación entre funcionalidades que comparten información.
-- Se reduce la complejidad operativa frente a una arquitectura distribuida de microservicios.
+- Se mantiene el core como una aplicación integrada, aunque SISGAL también incluye un microservicio independiente para la conexión biométrica.
 - Se facilita la ejecución de pruebas por módulo y la integración progresiva de funcionalidades.
 
 **Consecuencias y limitaciones:**
 
-- La aplicación se despliega como una unidad integrada, por lo que no se obtiene escalado independiente por módulo.
-- Un problema que afecte a la aplicación puede comprometer el funcionamiento de varios módulos.
+- El core se despliega como una unidad integrada, por lo que sus módulos no se escalan ni despliegan de forma independiente.
+- Un problema que afecte al core puede comprometer el funcionamiento de varios de sus módulos.
 - La arquitectura exige mantener límites internos claros para evitar que los módulos se conviertan en componentes fuertemente acoplados.
-- Los cambios que requieran desplegar el backend pueden afectar a la aplicación completa, aunque el cambio esté concentrado en un solo módulo.
+- Los cambios que requieran desplegar el core pueden afectar a la aplicación completa, aunque el cambio esté concentrado en un solo módulo.
 
 ## Relación con otras decisiones
 
-Esta decisión se relaciona con la selección de NestJS para el backend, PostgreSQL para la persistencia relacional y React para la interfaz de usuario. En conjunto, estas tecnologías permiten mantener una separación entre la presentación, la lógica de negocio y el acceso a los datos.
+Esta decisión se relaciona con la selección de NestJS para el backend core, PostgreSQL para la persistencia relacional y React para la interfaz de usuario. El microservicio de integración biométrica es un servicio de backend independiente y no forma parte de los módulos del core. En conjunto, estas tecnologías permiten mantener una separación entre la presentación, la lógica de negocio y el acceso a los datos.
