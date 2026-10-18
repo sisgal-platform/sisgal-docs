@@ -1,0 +1,27 @@
+@startuml C4_Container
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Person(admin, "Administrador")
+Person(employee, "Empleado")
+
+System_Boundary(system, "Sistema de Gestión") {
+    Container(frontend, "Frontend Web", "React", "Interfaz de usuario")
+    Container(backend, "Backend Core", "Node.js/NestJS", "API REST y módulos de negocio; monolito modular")
+    Container(integration, "Servicio de Integración", "Node.js/NestJS", "Conecta con el dispositivo biométrico")
+}
+
+System_Boundary(databases, "Bases de datos") {
+    ContainerDb(system_db, "Base de datos principal", "PostgreSQL (Supabase)", "Datos del sistema y marcaciones biométricas")
+    ContainerDb(audit_db, "Base de datos de auditoría", "PostgreSQL", "Base independiente; integración por definir")
+}
+
+System_Ext(biometric, "Dispositivo Biométrico", "Genera registros de asistencia")
+
+Rel(admin, frontend, "Usa")
+Rel(employee, frontend, "Usa")
+Rel(frontend, backend, "Consume API REST", "HTTPS/JSON")
+Rel(backend, system_db, "Lee y escribe datos del sistema")
+Rel(integration, system_db, "Registra marcaciones")
+Rel(biometric, integration, "Envía registros de asistencia")
+
+@enduml
