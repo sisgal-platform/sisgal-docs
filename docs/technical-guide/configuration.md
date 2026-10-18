@@ -25,6 +25,4 @@ La clave `anon` es el formato legado de clave pública de Supabase. Supabase anu
 
 ## Archivos y entornos
 
-Para desarrollo local, utiliza el mecanismo de configuración local del repositorio y comprueba qué archivos están excluidos de Git. En despliegue, define las variables en el entorno de compilación o ejecución que consume cada pipeline y servicio. La ubicación concreta de los secretos y la separación entre desarrollo, pruebas y producción debe coincidir con la configuración activa de GitHub Actions, Vercel y Render.
-
-La configuración de variables del microservicio biométrico está pendiente de documentar a partir de su manifiesto y su código.
+Para desarrollo local, utiliza el mecanismo de configuración local del repositorio y comprueba qué archivos están excluidos de Git. Para despliegues futuros, las variables deberán configurarse en GitHub Actions y en Vercel o Render según el flujo de cada aplicación. Los nombres de secretos y la separación entre entornos se documentarán cuando se creen esos workflows.
