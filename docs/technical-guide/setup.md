@@ -1,6 +1,6 @@
 # Instalación y entorno de desarrollo
 
-Esta guía recoge los scripts declarados en los manifiestos de frontend y backend core. Ejecútalos desde la carpeta que contiene el `package.json` correspondiente.
+Esta guía recoge los scripts declarados en los manifiestos de frontend y backend core. Ejecuta los comandos desde la carpeta que contiene el `package.json` correspondiente. El gestor indicado es npm y el runtime es Node.js.
 
 ## Tecnologías y herramientas declaradas
 
@@ -13,9 +13,7 @@ Esta guía recoge los scripts declarados en los manifiestos de frontend y backen
 
 El frontend usa `@supabase/supabase-js` solo para autenticación; no accede directamente a la base de datos. React Hook Form no aparece en el manifiesto compartido y no se documenta como dependencia.
 
-El frontend usa `@supabase/supabase-js` solo para autenticación; no accede directamente a la base de datos. React Hook Form no aparece en el manifiesto compartido y no se documenta como dependencia.
-
-Las versiones son los rangos declarados en los manifiestos compartidos. No se ha especificado una versión soportada de Node.js; verifícala en el repositorio de cada aplicación antes de preparar un entorno nuevo.
+La versión exacta de Node.js y npm aún debe fijarse. Usa la versión acordada por el equipo y el lockfile incluido en cada repositorio; si el repositorio contiene `package-lock.json`, instala dependencias con `npm ci`.
 
 ## Frontend
 
@@ -46,13 +44,12 @@ Las versiones son los rangos declarados en los manifiestos compartidos. No se ha
 
 El script `test:debug` también está disponible para depurar Jest con Node Inspector.
 
-## Microservicio biométrico
+## Alcance actual
 
-El microservicio es independiente del core. Su manifiesto, versión de Node.js, comandos y variables de entorno no se han proporcionado en esta guía; no reutilices los comandos del core como si fueran los de ese servicio.
+El backend documentado es el Backend Core. No hay un microservicio biométrico implementado ni un manifiesto separado que requiera instrucciones propias.
 
 ## Pendiente de completar
 
-- Versiones soportadas de Node.js y del gestor de paquetes.
-- Procedimiento de instalación de dependencias conforme al lockfile de cada repositorio.
-- Comandos de instalación, inicio y pruebas del microservicio biométrico.
-- Creación y migración de bases de datos, una vez verificados los comandos del proyecto.
+- Versiones exactas de Node.js y npm que se fijarán para desarrollo y pipelines.
+- Confirmar la existencia de `package-lock.json` en cada repositorio y mantenerlo versionado.
+- Creación y migración de bases de datos, una vez verificados los comandos disponibles en el repositorio del core.
