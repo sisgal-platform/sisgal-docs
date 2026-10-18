@@ -13,7 +13,7 @@ Este documento describe las principales tecnologías y herramientas utilizadas p
 | Herramienta de construcción del frontend | Vite | Ejecutar el entorno de desarrollo y generar los artefactos de compilación. |
 | Backend | NestJS | Implementar la API y la lógica del servidor mediante módulos y servicios. |
 | Lenguaje del backend | TypeScript | Mantener tipado y consistencia en la implementación del servidor. |
-| Persistencia relacional | PostgreSQL | Almacenar información estructurada del sistema. |
+| Persistencia relacional | PostgreSQL | Almacenar información estructurada en la base principal del sistema y en la base independiente de auditoría. |
 | Acceso a datos | TypeORM | Mapear entidades y gestionar operaciones sobre la base de datos desde el backend. |
 | Comunicación | API REST | Permitir la comunicación entre el frontend y el backend mediante solicitudes HTTP. |
 

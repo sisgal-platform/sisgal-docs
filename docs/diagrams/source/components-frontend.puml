@@ -1,0 +1,27 @@
+@startuml C4_Frontend_Components
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+Container_Ext(backend, "Backend Core", "Node.js/NestJS", "API REST del sistema")
+
+Container_Boundary(frontend_boundary, "Frontend Web (React)") {
+    Component(pages, "Pages / Routing", "React Router", "Define y organiza las rutas")
+    Component(layout, "Layout & Navigation", "React", "Estructura compartida y navegación")
+    Component(ui, "UI Components", "React / Tailwind CSS", "Componentes visuales reutilizables")
+    Component(features, "Feature Modules", "React", "Autenticación, asistencia, nómina y configuración")
+    Component(state, "State Management", "React", "Estado de la interfaz; librería por definir")
+    Component(forms, "Forms", "React Hook Form", "Gestión de formularios")
+    Component(services, "API Services", "Axios", "Llamadas HTTP al backend")
+    Component(auth, "Auth Handling", "React", "Estado de autenticación y protección de rutas")
+}
+
+Rel(pages, layout, "Usa")
+Rel(pages, features, "Carga funcionalidades")
+Rel(features, ui, "Usa")
+Rel(features, state, "Gestiona estado")
+Rel(features, forms, "Gestiona entradas")
+Rel(features, services, "Consume API")
+Rel(state, services, "Obtiene datos")
+Rel(auth, pages, "Protege rutas")
+Rel(services, backend, "Llamadas REST", "HTTPS/JSON")
+
+@enduml

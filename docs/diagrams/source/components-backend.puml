@@ -1,0 +1,39 @@
+@startuml C4_Backend_Components
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+Person(admin, "Administrador")
+Person(employee, "Empleado")
+
+Container(frontend, "Frontend Web", "React", "Interfaz de usuario")
+Container(integration, "Servicio de Integración", "Node.js/NestJS", "Recibe marcaciones del dispositivo")
+ContainerDb(system_db, "Base de datos principal", "PostgreSQL (Supabase)", "Datos del sistema y marcaciones biométricas")
+ContainerDb(audit_db, "Base de datos de auditoría", "PostgreSQL", "Base independiente; integración por definir")
+System_Ext(biometric, "Dispositivo Biométrico", "Genera registros de asistencia")
+
+Container_Boundary(core, "Backend Core (monolito modular)") {
+    Component(api, "API Controllers", "REST Controllers", "Expone endpoints al frontend")
+    Component(auth, "Auth Module", "NestJS", "Autenticación y autorización")
+    Component(attendance, "Attendance Module", "NestJS", "Consulta marcaciones y gestiona asistencia")
+    Component(payroll, "Payroll Module", "NestJS", "Calcula la nómina")
+    Component(config, "Configuration Module", "NestJS", "Gestiona configuración y reglas")
+    Component(audit, "Audit Module (propuesto)", "Pendiente de definir", "Módulo transversal; integración aún no definida")
+}
+
+Rel(admin, frontend, "Usa")
+Rel(employee, frontend, "Usa")
+Rel(frontend, api, "Consume API REST", "HTTPS/JSON")
+
+Rel(api, auth, "Usa")
+Rel(api, attendance, "Usa")
+Rel(api, payroll, "Usa")
+Rel(api, config, "Usa")
+
+Rel(auth, system_db, "Lee y escribe")
+Rel(attendance, system_db, "Consulta marcaciones y asistencia")
+Rel(payroll, system_db, "Lee y escribe")
+Rel(config, system_db, "Lee y escribe")
+
+Rel(biometric, integration, "Envía marcaciones")
+Rel(integration, system_db, "Registra marcaciones")
+
+@enduml

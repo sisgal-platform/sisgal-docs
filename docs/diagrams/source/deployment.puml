@@ -1,0 +1,38 @@
+@startuml SISGAL_Deployment
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+node "Navegador del usuario" as browser {
+    component "Cliente web" as client
+}
+
+node "Vercel" as vercel {
+    component "Frontend React / Vite" as frontend
+}
+
+node "Render" as render {
+    component "Backend Core\n(monolito modular)" as core
+    component "Microservicio de\nintegración biométrica" as integration
+    component "Módulos funcionales" as modules
+    component "Audit Module\n(propuesto)" as audit
+}
+
+node "Servicios de datos" as data {
+    database "Base principal\nPostgreSQL / Supabase" as primary_db
+    database "Base de auditoría\nPostgreSQL\nhosting por definir" as audit_db
+}
+
+node "Entorno del cliente" as device {
+    component "Dispositivo biométrico" as biometric
+}
+
+client --> frontend : HTTPS
+frontend --> core : API REST / HTTPS
+core --> modules : Ejecuta
+modules --> primary_db : Lee / escribe
+biometric --> integration : Envía marcaciones
+integration --> primary_db : Registra marcaciones
+modules ..> audit : Uso transversal previsto
+audit ..> audit_db : Persistencia por definir
+
+@enduml

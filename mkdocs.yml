@@ -105,7 +105,11 @@ nav:
       - Introducción: diagrams/index.md
       - Contexto (C4): diagrams/context.md
       - Contenedores (C4): diagrams/containers.md
-      - Componentes (C4): diagrams/components.md
+      - Componentes (C4):
+          - Introducción: diagrams/components.md
+          - Backend Core: diagrams/components-backend.md
+          - Frontend: diagrams/components-frontend.md
+      - Despliegue de contenedores: diagrams/deployment.md
       - Base de Datos: diagrams/database.md
       - Secuencia: diagrams/sequence.md
 

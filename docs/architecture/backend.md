@@ -2,15 +2,15 @@
 
 ## Introducción
 
-El backend de SISGAL implementa la lógica de negocio relacionada con la gestión de asistencia, administración de empleados y liquidación de nómina. Fue desarrollado utilizando **NestJS**, aprovechando su arquitectura modular y el uso de inyección de dependencias para facilitar la mantenibilidad y escalabilidad del sistema.
+El backend de SISGAL se compone de dos servicios: el **backend core**, que implementa la lógica principal de negocio y la API REST consumida por el frontend, y un **microservicio de integración biométrica**, dedicado a la conexión con el dispositivo. El core fue desarrollado con **NestJS**, cuya organización modular y el uso de inyección de dependencias facilitan la mantenibilidad y evolución de sus funcionalidades.
 
-La aplicación expone una API REST consumida por el frontend y es responsable de ejecutar todas las reglas de negocio asociadas al dominio.
+La decisión de monolito modular aplica únicamente al core; el servicio de integración es independiente.
 
 ---
 
 ## Principios de diseño
 
-El backend fue diseñado siguiendo los siguientes principios:
+El backend core fue diseñado siguiendo los siguientes principios:
 
 - Separación de responsabilidades.
 - Bajo acoplamiento entre módulos.
@@ -23,58 +23,40 @@ El backend fue diseñado siguiendo los siguientes principios:
 
 ## Organización del sistema
 
-La solución adopta una arquitectura de monolito modular.
+El backend core adopta una arquitectura de monolito modular. Sus módulos funcionales incluyen autenticación, empleados, asistencia, jornadas laborales, nómina y configuración.
 
-Cada módulo representa un dominio funcional independiente.
+Cada módulo contiene sus controladores, casos de uso, servicios, entidades, repositorios y DTOs, según corresponda a su responsabilidad.
 
-Ejemplos de módulos:
-
-- Autenticación
-- Empleados
-- Asistencia
-- Jornadas laborales
-- Liquidación de nómina
-- Configuración
-- Auditoría
-
-Cada módulo contiene sus propios:
-
-- Controladores
-- Casos de uso
-- Servicios
-- Entidades
-- Repositorios
-- DTOs
+Se propone implementar un módulo transversal de auditoría reutilizable en el sistema. Su alcance, los eventos que registrará y la conexión con la base de datos de auditoría están pendientes de definición; la documentación no lo presenta como una funcionalidad ya implementada.
 
 ---
 
 ## Persistencia
 
-La persistencia de la información se implementa mediante PostgreSQL utilizando Prisma ORM.
+La arquitectura contempla dos bases de datos independientes, ambas PostgreSQL: la base principal para los datos del sistema y las marcaciones biométricas, y una base de auditoría cuyo uso está por definir. La persistencia del core se implementa mediante TypeORM.
 
-El acceso a la base de datos se encuentra encapsulado en la capa de infraestructura, evitando dependencias directas desde la lógica del negocio.
+El acceso a la base principal se encuentra encapsulado en la capa de infraestructura, evitando dependencias directas desde la lógica del negocio.
 
 ---
 
 ## Comunicación
 
-La comunicación con el frontend se realiza mediante una API REST utilizando JSON.
+La comunicación entre el frontend y el backend core se realiza mediante una API REST utilizando JSON.
 
-Las integraciones con dispositivos biométricos serán realizadas mediante un servicio especializado encargado de transformar y registrar las marcaciones recibidas.
+El microservicio de integración recibe las marcaciones del dispositivo biométrico y las registra en la base de datos principal. El servicio es independiente del core.
 
 ---
 
 ## Seguridad
 
-El backend implementará mecanismos de autenticación y autorización mediante JWT.
+El backend core implementará mecanismos de autenticación y autorización mediante JWT.
 
-Las operaciones serán protegidas utilizando Guards y Roles definidos por el sistema.
+Las operaciones del core serán protegidas utilizando Guards y Roles definidos por el sistema.
 
 ---
 
-## Próximos diagramas
+## Diagramas
 
-- Diagrama de componentes.
-- Diagrama de paquetes.
-- Diagrama de dependencias.
-- Diagrama de módulos.
+- [Componentes del Backend Core (C4, Nivel 3)](../diagrams/components-backend.md).
+- [Contenedores (C4, Nivel 2)](../diagrams/containers.md).
+- [Vista de despliegue](../diagrams/deployment.md).

@@ -27,7 +27,7 @@ SISGAL tiene como propósito:
 | Frontend | React + TypeScript |
 | Backend | NestJS |
 | Base de datos | PostgreSQL |
-| ORM | Prisma |
+| ORM | TypeORM |
 | Contenedores | Docker |
 | Control de versiones | GitHub |
 | Documentación | MkDocs Material |
