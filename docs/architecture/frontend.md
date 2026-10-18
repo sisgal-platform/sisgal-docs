@@ -2,71 +2,35 @@
 
 ## Introducción
 
-El frontend de SISGAL proporciona la interfaz de usuario para la administración del sistema. Fue desarrollado utilizando React y TypeScript, organizando la aplicación mediante una arquitectura basada en características (Feature-Based Architecture).
+El frontend de SISGAL ofrece la interfaz de usuario y está organizado por funcionalidades (Feature-Based Architecture). Está desarrollado con React y TypeScript.
 
----
+## Tecnologías y librerías
 
-## Objetivos
+- **React `^19.2.8` y React DOM `^19.2.8`:** componentes e interfaz.
+- **React Router `^7.18.3`:** navegación y rutas.
+- **Vite `^8.2.2`:** servidor de desarrollo y compilación.
+- **TypeScript `~6.0.2`:** tipado estático.
+- **Tailwind CSS `^3.4.19`:** estilos.
+- **Axios `^1.20.0`:** llamadas HTTP a la API REST del backend core.
+- **Supabase JS `^2.116.0`:** autenticación.
+- **Radix UI:** primitivas de interfaz.
+- **Recharts `^3.10.1` y Lucide React `^1.44.0`:** gráficos e iconografía.
+- **Vitest `^5.0.0`, Testing Library y jsdom:** pruebas frontend.
 
-La arquitectura del frontend busca:
-
-- Facilitar el mantenimiento.
-- Favorecer la reutilización de componentes.
-- Reducir el acoplamiento.
-- Mejorar la experiencia del usuario.
-- Simplificar el crecimiento del sistema.
-
----
-
-## Tecnologías
-
-- React
-- TypeScript
-- React Router
-- Axios
-- TanStack Query
-- React Hook Form
-- Tailwind CSS
-- Jest
-
----
+La librería React Hook Form no está incluida en el manifiesto actual y no se documenta como dependencia.
 
 ## Organización
 
-La aplicación se organiza por funcionalidades.
+La aplicación se organiza por funcionalidades. Cada feature agrupa sus componentes, páginas, servicios y lógica de presentación relacionados.
 
-Cada feature contiene sus propios componentes, páginas, servicios y lógica de negocio.
+Los componentes compartidos y las utilidades de interfaz se construyen con React, Tailwind CSS y las librerías UI incluidas en el manifiesto.
 
-Esta estructura facilita la evolución del sistema conforme aumenten los módulos funcionales.
+## Comunicación y autenticación
 
----
+El frontend consume la API REST del backend core mediante Axios. El cliente `@supabase/supabase-js` se usa para autenticación; no se utiliza para consultar directamente las bases de datos de SISGAL.
 
-## Comunicación con el Backend
+La navegación se implementa con React Router. Las rutas protegidas responden al estado de autenticación definido por la aplicación.
 
-Toda la comunicación con el backend se realiza mediante API REST.
+## Comandos principales
 
-Las peticiones HTTP son administradas utilizando Axios y React Query para aprovechar funcionalidades como:
-
-- Caché.
-- Reintentos automáticos.
-- Sincronización.
-- Invalidación de consultas.
-
----
-
-## Navegación
-
-La navegación se implementa mediante React Router.
-
-Las rutas protegidas estarán controladas por el estado de autenticación del usuario.
-
----
-
-## Calidad
-
-El frontend incorpora:
-
-- ESLint.
-- Prettier.
-- Jest.
-- GitHub Actions.
+Los scripts del frontend permiten ejecutar el servidor de desarrollo, compilar, validar lint y correr pruebas con Vitest. Consulta [Instalación y entorno](../technical-guide/setup.md) para la lista exacta de comandos.
