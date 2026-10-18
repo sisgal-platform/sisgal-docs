@@ -10,7 +10,7 @@ La decisión de monolito modular aplica únicamente al core; el servicio de inte
 
 ## Principios de diseño
 
-El backend fue diseñado siguiendo los siguientes principios:
+El backend core fue diseñado siguiendo los siguientes principios:
 
 - Separación de responsabilidades.
 - Bajo acoplamiento entre módulos.
@@ -66,9 +66,9 @@ La conexión con el dispositivo biométrico está a cargo del microservicio de i
 
 ## Seguridad
 
-El backend implementará mecanismos de autenticación y autorización mediante JWT.
+El backend core implementará mecanismos de autenticación y autorización mediante JWT.
 
-Las operaciones serán protegidas utilizando Guards y Roles definidos por el sistema.
+Las operaciones del core serán protegidas utilizando Guards y Roles definidos por el sistema.
 
 ---
 
