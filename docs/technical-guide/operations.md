@@ -1,31 +1,31 @@
 # Operación y despliegue
 
-SISGAL despliega sus aplicaciones mediante pipelines de **GitHub Actions** al detectar cambios en la rama `develop`. El flujo de despliegue comprende el frontend y los servicios de backend.
+Los pipelines de GitHub Actions aún no están implementados. El despliegue automático es el objetivo de trabajo y debe validar calidad, cobertura y Sonar antes de publicar cada aplicación.
 
-## Destinos de despliegue
+## Destinos previstos
 
 - **Frontend React:** Vercel.
 - **Backend Core:** Render.
-- **Microservicio de integración biométrica:** Render.
 - **Base de datos principal:** PostgreSQL en Supabase.
-- **Base de auditoría:** PostgreSQL independiente; su alojamiento y su integración siguen pendientes de definir.
+- **Base de auditoría:** diseño PostgreSQL independiente; aún no está conectada al sistema.
 
-La [vista de despliegue](../diagrams/deployment.md) muestra la topología y el flujo de las marcaciones.
+La [vista de despliegue](../diagrams/deployment.md) muestra los servicios y dependencias que están confirmados. El flujo del dispositivo biométrico se documentará cuando se confirme su implementación.
 
-## Verificación de un despliegue
+## Flujo propuesto
 
-1. Revisa el resultado del pipeline de GitHub Actions asociado al cambio en `develop`.
-2. Comprueba que los servicios publicados en Vercel y Render finalicen el despliegue correctamente.
-3. Verifica la aplicación y las rutas principales desde sus URL configuradas.
-4. Revisa los registros de los servicios ante errores de inicio o comunicación.
+1. En una solicitud de cambio, instalar dependencias usando Node.js, npm y el lockfile del repositorio.
+2. Ejecutar lint, pruebas, generar el reporte de cobertura y compilar la aplicación afectada.
+3. Ejecutar el análisis de Sonar y exigir que su Quality Gate sea aprobado.
+4. Detener el flujo si falla una validación o no se alcanza la cobertura mínima acordada.
+5. Al integrar cambios en la rama de despliegue acordada, publicar solo la aplicación afectada: frontend en Vercel o Backend Core en Render.
+6. Revisar el resultado del despliegue y comprobar la aplicación desde la URL de su entorno.
 
-Los nombres de workflows, verificaciones automáticas, endpoints de salud y pasos de reversión deben documentarse al confirmar los archivos de workflow y la configuración de cada plataforma. Esta guía no presupone comandos manuales de publicación.
+Este es un diseño pendiente de implementación. La rama exacta, el umbral de cobertura, la instancia y proyectos de Sonar, los nombres de secretos, las condiciones de despliegue y los pasos de reversión deben confirmarse antes de activar los workflows.
 
-## Pendiente de completar
+## Operación y recuperación pendientes
 
-- Responsables y URL de cada entorno.
-- Flujo exacto de cada workflow, incluyendo filtros de cambios y condiciones de publicación.
-- Validaciones posteriores al despliegue y criterios de aceptación.
-- Procedimiento probado de rollback.
-- Monitoreo, alertas y retención de registros.
-- Pasos de operación y recuperación de las bases de datos.
+- Definir entornos, responsables y URL de cada aplicación.
+- Configurar endpoints de salud y criterios de aceptación posteriores al despliegue.
+- Documentar y probar el procedimiento de rollback.
+- Definir monitoreo, alertas y retención de registros.
+- Definir respaldos y restauración de ambas bases cuando la auditoría esté conectada.
