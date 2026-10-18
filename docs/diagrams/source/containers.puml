@@ -5,7 +5,7 @@ Person(admin, "Administrador")
 Person(employee, "Empleado")
 
 System_Boundary(system, "Sistema de Gestión") {
-    Container(frontend, "Frontend Web", "React", "Interfaz de usuario")
+    Container(frontend, "Frontend Web", "React", "Interfaz de usuario; autentica mediante Supabase Auth")
     Container(backend, "Backend Core", "Node.js/NestJS", "API REST y módulos de negocio; monolito modular")
     Container(integration, "Servicio de Integración", "Node.js/NestJS", "Conecta con el dispositivo biométrico")
 }
@@ -16,10 +16,12 @@ System_Boundary(databases, "Bases de datos") {
 }
 
 System_Ext(biometric, "Dispositivo Biométrico", "Genera registros de asistencia")
+System_Ext(supabase_auth, "Supabase Auth", "Servicio externo de autenticación")
 
 Rel(admin, frontend, "Usa")
 Rel(employee, frontend, "Usa")
 Rel(frontend, backend, "Consume API REST", "HTTPS/JSON")
+Rel(frontend, supabase_auth, "Autentica usuarios", "HTTPS")
 Rel(backend, system_db, "Lee y escribe datos del sistema")
 Rel(integration, system_db, "Registra marcaciones")
 Rel(biometric, integration, "Envía registros de asistencia")
