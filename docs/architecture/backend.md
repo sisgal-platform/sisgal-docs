@@ -2,9 +2,9 @@
 
 ## Introducción
 
-El backend de SISGAL implementa la lógica de negocio relacionada con la gestión de asistencia, administración de empleados y liquidación de nómina. Fue desarrollado utilizando **NestJS**, aprovechando su arquitectura modular y el uso de inyección de dependencias para facilitar la mantenibilidad y escalabilidad del sistema.
+El backend de SISGAL se compone de dos servicios: el **backend core**, que implementa la lógica principal de negocio y la API REST consumida por el frontend, y un **microservicio de integración biométrica**, dedicado a la conexión con el dispositivo. El core fue desarrollado con **NestJS**, cuya organización modular y el uso de inyección de dependencias facilitan la mantenibilidad y evolución de sus funcionalidades.
 
-La aplicación expone una API REST consumida por el frontend y es responsable de ejecutar todas las reglas de negocio asociadas al dominio.
+La decisión de monolito modular aplica únicamente al core; el servicio de integración es independiente.
 
 ---
 
@@ -23,7 +23,7 @@ El backend fue diseñado siguiendo los siguientes principios:
 
 ## Organización del sistema
 
-La solución adopta una arquitectura de monolito modular.
+El backend core adopta una arquitectura de monolito modular.
 
 Cada módulo representa un dominio funcional independiente.
 
@@ -58,9 +58,9 @@ El acceso a la base de datos se encuentra encapsulado en la capa de infraestruct
 
 ## Comunicación
 
-La comunicación con el frontend se realiza mediante una API REST utilizando JSON.
+La comunicación entre el frontend y el backend core se realiza mediante una API REST utilizando JSON.
 
-Las integraciones con dispositivos biométricos serán realizadas mediante un servicio especializado encargado de transformar y registrar las marcaciones recibidas.
+La conexión con el dispositivo biométrico está a cargo del microservicio de integración, independiente del core.
 
 ---
 
