@@ -1,3 +1,40 @@
 # Diagrama de contenedores (C4)
 
-> **Pendiente de recuperación:** agrega aquí el diagrama de contenedores C4 aprobado para SISGAL. Confirma primero los límites y responsabilidades de cada contenedor con la persona responsable de arquitectura.
+El diagrama muestra los contenedores principales indicados para SISGAL y sus relaciones. El nivel de contenedores usa `C4_Container.puml`.
+
+```plantuml
+@startuml C4_Container
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Person(admin, "Administrador")
+Person(employee, "Empleado")
+
+System_Boundary(system, "Sistema de Gestión") {
+    Container(frontend, "Frontend Web", "React", "Interfaz de usuario")
+    Container(backend, "Backend Core", "Node.js/NestJS", "Lógica de negocio, API REST, módulos internos")
+    Container(integration, "Servicio de Integración", "Node.js/NestJS", "Gestiona comunicación con biométrico")
+}
+
+System_Boundary(db, "Bases de datos") {
+    ContainerDb(system_db, "Base de datos", "PostgreSQL (Supabase)", "Datos del sistema")
+    ContainerDb(audit_db, "Base de datos de auditoría", "PostgreSQL", "Logs y trazabilidad")
+}
+
+System_Ext(biometric, "Dispositivo Biométrico")
+
+Rel(admin, frontend, "Usa")
+Rel(employee, frontend, "Usa")
+
+Rel(frontend, backend, "Consume API REST", "HTTPS/JSON")
+
+Rel(backend, system_db, "Lee/Escribe")
+Rel(backend, audit_db, "Registra eventos")
+
+Rel(integration, system_db, "Registra asistencia")
+Rel(integration, audit_db, "Logs")
+Rel(biometric, integration, "Envía registros de asistencia")
+
+@enduml
+```
+
+> **Nota de arquitectura:** la relación final representa el flujo indicado en el diagrama de contexto (el sistema recibe registros del dispositivo). La relación concreta del texto original de Nivel 2 estaba truncada.
