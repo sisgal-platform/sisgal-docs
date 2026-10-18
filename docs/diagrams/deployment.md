@@ -8,8 +8,8 @@ Esta vista representa las plataformas de destino confirmadas para el frontend y 
 
 ## Elementos
 
-- **Vercel:** plataforma prevista para el frontend React construido con Vite.
-- **Render:** plataforma prevista para el Backend Core.
+- **Vercel:** plataforma de destino del frontend React construido con Vite.
+- **Render:** plataforma de destino del Backend Core.
 - **Base de datos principal:** PostgreSQL alojado en Supabase, según la configuración documentada.
 - **Supabase Auth:** servicio utilizado por el frontend para autenticación.
 - **Base de datos de auditoría:** PostgreSQL independiente en diseño; todavía no está conectada y el alojamiento no se ha definido.
