@@ -1,6 +1,6 @@
 # Manual técnico
 
-Esta sección reúne los procedimientos para preparar, configurar, desplegar y mantener SISGAL. Las instrucciones de comandos y configuración se basan en los manifiestos y variables proporcionados para el frontend y el backend core.
+Esta sección reúne los procedimientos para preparar, configurar, desplegar y mantener SISGAL. Las instrucciones de comandos y configuración se basan en los manifiestos y variables proporcionados para el frontend y el Backend Core.
 
 ## Contenido
 
@@ -13,4 +13,4 @@ Esta sección reúne los procedimientos para preparar, configurar, desplegar y m
 
 La arquitectura de referencia está en [Arquitectura](../architecture/overview.md) y los diagramas, incluida la [vista de despliegue](../diagrams/deployment.md), en [Diagramas](../diagrams/index.md).
 
-> **Alcance:** las instrucciones de frontend y backend core están basadas en sus scripts y variables compartidos para esta documentación. Los requisitos de Node.js, los comandos y las variables del microservicio biométrico deben completarse desde su repositorio y configuración reales.
+> **Estado:** se confirmó el uso de Node.js y npm. Los pipelines de GitHub Actions están pendientes de creación. El modelo de auditoría se documenta como diseño aún no conectado.
