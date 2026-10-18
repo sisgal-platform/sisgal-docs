@@ -6,14 +6,14 @@ Ejecuta los scripts desde la raíz del frontend o del backend core, según el ca
 
 Como comprobaciones locales están disponibles:
 
-- **Frontend:** `npm run lint`, `npm run build`, `npm run test`.
-- **Backend Core:** `npm run lint`, `npm run build`, `npm run test`; para pruebas de extremo a extremo, `npm run test:e2e`.
+- **Frontend:** `npm run lint`, `npm run build`, `npm run test` y `npm run test:coverage`.
+- **Backend Core:** `npm run lint`, `npm run build`, `npm run test:cov`; para pruebas de extremo a extremo, `npm run test:e2e`.
 
-Los scripts backend `lint` y `format` modifican archivos; revisa el diff resultante antes de confirmar cambios.
+Los scripts backend `lint` y `format` modifican archivos; revisa los cambios producidos antes de confirmarlos.
 
 ## Pipelines
 
-Los despliegues se realizan mediante pipelines de GitHub Actions activados por cambios en `develop`. El flujo debe mantenerse alineado con los scripts del proyecto y con la configuración de Vercel y Render.
+Los workflows de GitHub Actions aún no existen. El diseño previsto valida lint, pruebas, cobertura y Sonar; luego despliega la aplicación afectada a Vercel (frontend) o Render (Backend Core) bajo la condición de rama que acuerde el equipo. Consulta [GitHub Actions](../deployment/github-actions.md) para el diseño y las decisiones pendientes.
 
 ## Prácticas de contribución
 
