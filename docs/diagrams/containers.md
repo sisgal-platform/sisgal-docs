@@ -22,4 +22,4 @@ El diagrama desglosa SISGAL en los contenedores principales indicados y muestra 
 4. El servicio de integración registra asistencia y logs en las bases indicadas.
 5. El dispositivo biométrico envía registros de asistencia al servicio de integración.
 
-> **Puntos por confirmar:** el diagrama representa el servicio de integración como un contenedor separado, mientras el ADR describe el backend como un monolito modular desplegado como una unidad. Debe confirmarse si este servicio se ejecuta como proceso independiente o dentro del mismo despliegue. También falta confirmar si la auditoría usa una base de datos separada. La relación del dispositivo al servicio se basa en el flujo descrito en el diagrama de contexto, porque la última relación del texto original de Nivel 2 estaba truncada.
+> **Aclaración de arquitectura:** SISGAL tiene dos servicios de backend: el backend core, organizado como monolito modular, y el microservicio independiente dedicado a la conexión con el dispositivo biométrico. El monolito modular aplica solamente al core. Queda por confirmar si la base de datos de auditoría es independiente de la base de datos del sistema.
