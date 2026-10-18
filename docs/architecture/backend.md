@@ -23,34 +23,17 @@ El backend core fue diseñado siguiendo los siguientes principios:
 
 ## Organización del sistema
 
-El backend core adopta una arquitectura de monolito modular.
+El backend core adopta una arquitectura de monolito modular. Sus módulos funcionales incluyen autenticación, empleados, asistencia, jornadas laborales, nómina y configuración.
 
-Cada módulo representa un dominio funcional independiente.
+Cada módulo contiene sus controladores, casos de uso, servicios, entidades, repositorios y DTOs, según corresponda a su responsabilidad.
 
-Ejemplos de módulos:
-
-- Autenticación
-- Empleados
-- Asistencia
-- Jornadas laborales
-- Liquidación de nómina
-- Configuración
-- Auditoría
-
-Cada módulo contiene sus propios:
-
-- Controladores
-- Casos de uso
-- Servicios
-- Entidades
-- Repositorios
-- DTOs
+Se propone implementar un módulo transversal de auditoría reutilizable en el sistema. Su alcance, los eventos que registrará y la conexión con la base de datos de auditoría están pendientes de definición; la documentación no lo presenta como una funcionalidad ya implementada.
 
 ---
 
 ## Persistencia
 
-La arquitectura contempla dos bases de datos independientes, ambas PostgreSQL: la base principal para los datos del sistema y la base de auditoría para logs y trazabilidad. La persistencia del core se implementa mediante TypeORM.
+La arquitectura contempla dos bases de datos independientes, ambas PostgreSQL: la base principal para los datos del sistema y las marcaciones biométricas, y una base de auditoría cuyo uso está por definir. La persistencia del core se implementa mediante TypeORM.
 
 El acceso a la base principal se encuentra encapsulado en la capa de infraestructura, evitando dependencias directas desde la lógica del negocio.
 
@@ -60,7 +43,7 @@ El acceso a la base principal se encuentra encapsulado en la capa de infraestruc
 
 La comunicación entre el frontend y el backend core se realiza mediante una API REST utilizando JSON.
 
-La conexión con el dispositivo biométrico está a cargo del microservicio de integración, independiente del core.
+El microservicio de integración recibe las marcaciones del dispositivo biométrico y las registra en la base de datos principal. El servicio es independiente del core.
 
 ---
 
@@ -72,9 +55,8 @@ Las operaciones del core serán protegidas utilizando Guards y Roles definidos p
 
 ---
 
-## Próximos diagramas
+## Diagramas
 
-- Diagrama de componentes.
-- Diagrama de paquetes.
-- Diagrama de dependencias.
-- Diagrama de módulos.
+- [Componentes del Backend Core (C4, Nivel 3)](../diagrams/components-backend.md).
+- [Contenedores (C4, Nivel 2)](../diagrams/containers.md).
+- [Vista de despliegue](../diagrams/deployment.md).
