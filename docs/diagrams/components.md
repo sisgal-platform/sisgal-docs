@@ -1,3 +1,3 @@
-# Diagrama de componentes (C4)
+# Diagrama de componentes (C4, Nivel 3)
 
-> **Pendiente de recuperación:** agrega aquí el diagrama de componentes aprobado para SISGAL, con sus dependencias principales y referencias al código correspondiente.
+> **Pendiente:** no se ha proporcionado un diagrama de componentes aprobado. Se incorporará cuando estén definidos y validados los componentes internos y sus dependencias.
