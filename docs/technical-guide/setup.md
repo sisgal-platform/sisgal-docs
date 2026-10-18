@@ -13,6 +13,8 @@ Esta guía recoge los scripts declarados en los manifiestos de frontend y backen
 
 El frontend usa `@supabase/supabase-js` solo para autenticación; no accede directamente a la base de datos. React Hook Form no aparece en el manifiesto compartido y no se documenta como dependencia.
 
+El frontend usa `@supabase/supabase-js` solo para autenticación; no accede directamente a la base de datos. React Hook Form no aparece en el manifiesto compartido y no se documenta como dependencia.
+
 Las versiones son los rangos declarados en los manifiestos compartidos. No se ha especificado una versión soportada de Node.js; verifícala en el repositorio de cada aplicación antes de preparar un entorno nuevo.
 
 ## Frontend
