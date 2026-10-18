@@ -56,7 +56,7 @@ Para el job del frontend, agrega al entorno de GitHub Actions usado por el workf
 - Secreto `VERCEL_TOKEN`.
 - Variables `VERCEL_ORG_ID` y `VERCEL_PROJECT_ID`.
 
-Las variables `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` y `VITE_API_URL` deben estar configuradas en el entorno de compilación del proyecto Vercel. No agregues la clave de servicio de Supabase al frontend.
+Las variables `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` y `VITE_API_URL` deben estar configuradas en Vercel y como variables de repositorio de GitHub para que el job de validación pueda compilar. Son valores públicos de cliente; no agregues la clave de servicio de Supabase al frontend.
 
 El ejemplo despliega como Preview desde `develop`. Confirma en Vercel qué entorno debe corresponder a esa rama antes de cambiar el comando a producción.
 
