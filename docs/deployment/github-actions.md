@@ -62,7 +62,7 @@ El ejemplo despliega como Preview desde `develop`. Para Render, el Deploy Hook d
 
 ### Render
 
-Para el job del Backend Core, crea un Deploy Hook del servicio Render y almacena su URL como secreto `RENDER_DEPLOY_HOOK_URL`. Vincula el servicio Render a la rama `develop` y desactiva su despliegue automático por push si GitHub Actions será el único mecanismo de publicación; así se evitan despliegues duplicados.
+Para el job del Backend Core, crea un Deploy Hook del servicio Render y almacena su URL como secreto `RENDER_DEPLOY_HOOK_URL`. Vincula un servicio Render de pruebas a la rama `develop` y desactiva su despliegue automático por push si GitHub Actions será el único mecanismo de publicación; así se evitan despliegues duplicados y se mantiene separado el servicio de producción.
 
 Las variables `SUPABASE_DB_URL` y `SUPABASE_URL` permanecen configuradas en el entorno de ejecución del servicio Render. No se imprimen ni se transfieren como valores de salida del pipeline.
 
