@@ -40,14 +40,16 @@ La solución contempla estas aplicaciones y servicios:
 
 El frontend se comunica con el core mediante una API REST.
 
-La información es persistida en PostgreSQL mediante TypeORM.
+Los datos del sistema y las marcaciones se persisten en la base principal PostgreSQL mediante TypeORM. La base de auditoría es independiente y también utiliza PostgreSQL; su flujo de escritura está pendiente de definición.
 
 ---
 
 ## Arquitectura de alto nivel
 
-> [Diagrama de contexto (C4, Nivel 1)](../diagrams/context.md)
-> [Diagrama de contenedores (C4, Nivel 2)](../diagrams/containers.md)
+- [Diagrama de contexto (C4, Nivel 1)](../diagrams/context.md)
+- [Diagrama de contenedores (C4, Nivel 2)](../diagrams/containers.md)
+- [Componentes (C4, Nivel 3)](../diagrams/components.md)
+- [Vista de despliegue](../diagrams/deployment.md)
 
 ## Componentes principales
 
@@ -57,7 +59,8 @@ Actualmente el sistema está compuesto por los siguientes componentes:
 |------------|-----------------|
 | Frontend | Interfaz de usuario |
 | Backend core | Procesamiento de las reglas principales de negocio mediante módulos funcionales |
-| Base de datos | Persistencia de información |
+| Base de datos principal | Persistencia del sistema y de las marcaciones biométricas |
+| Base de datos de auditoría | Almacenamiento independiente; integración aún por definir |
 | Microservicio de integración biométrica | Conexión con el dispositivo biométrico |
 
 ## Módulos funcionales
@@ -72,9 +75,11 @@ Entre los principales módulos se encuentran:
 - Jornadas laborales
 - Liquidación de nómina
 - Configuración
-- Auditoría
 
-Cada módulo encapsula sus casos de uso, entidades, reglas de negocio y mecanismos de persistencia.
+
+Se propone un módulo transversal de auditoría, pero su alcance e integración todavía están por definir.
+
+Cada módulo encapsula sus casos de uso, entidades, reglas de negocio y mecanismos de persistencia según corresponda.
 
 La comunicación entre módulos se realiza mediante interfaces bien definidas, evitando dependencias innecesarias entre ellos.
 
