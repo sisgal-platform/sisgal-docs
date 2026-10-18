@@ -75,5 +75,6 @@ Las variables `SUPABASE_DB_URL` y `SUPABASE_URL` permanecen configuradas en el e
 - Reglas de protección de `develop` y aprobación de despliegues.
 - Procedimiento de rollback y verificación de salud del servicio.
 - Confirmar que Vercel no esté generando despliegues automáticos duplicados para los mismos cambios.
+- Crear y verificar el servicio Render de pruebas enlazado con `develop`, separado de producción.
 
 Para configurar secretos y limitar su acceso a un entorno, usa la configuración de [GitHub Actions Environments y secrets](https://docs.github.com/en/actions/concepts/workflows-and-actions/deployment-environments) y sigue las guías oficiales de [SonarQube Cloud](https://docs.sonarsource.com/sonarqube-cloud/analyzing-source-code/test-coverage/javascript-typescript-test-coverage), [Vercel con GitHub Actions](https://vercel.com/kb/guide/how-can-i-use-github-actions-with-vercel) y [Deploy Hooks de Render](https://render.com/docs/deploy-hooks).
