@@ -1,0 +1,34 @@
+@startuml SISGAL_Deployment
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+node "Navegador del usuario" as browser {
+    component "Cliente web" as client
+}
+
+node "Vercel" as vercel {
+    component "Frontend React / Vite" as frontend
+}
+
+node "Render" as render {
+    component "Backend Core\n(monolito modular)" as core
+    component "Módulos funcionales" as modules
+    component "Audit Module\n(propuesto, no conectado)" as audit
+}
+
+node "Servicios de datos" as data {
+    database "Base principal\nPostgreSQL / Supabase" as primary_db
+    database "Base de auditoría\nPostgreSQL\n(no conectada)" as audit_db
+}
+
+cloud "Supabase Auth" as supabase_auth
+
+client --> frontend : HTTPS
+frontend --> core : API REST / HTTPS
+frontend --> supabase_auth : Autenticación / HTTPS
+core --> modules : Ejecuta
+modules --> primary_db : Lee / escribe
+modules ..> audit : Módulo transversal previsto
+audit ..> audit_db : Persistencia futura
+
+@enduml
