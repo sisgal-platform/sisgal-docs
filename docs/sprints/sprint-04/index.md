@@ -26,8 +26,8 @@ El Sprint buscó dar continuidad a las funcionalidades de empleados, asistencia 
 
 | ID | Historia de usuario | Estado |
 |---|---|---|
-| HU39 | Configurar parámetros de nómina - Jornada laboral | Completada |
-| HU39 | Configurar parámetros de nómina - Recargos laborales | Completada |
+| HU47 | Configurar parámetros de nómina - Jornada laboral | Completada |
+| HU48 | Configurar parámetros de nómina - Recargos laborales | Completada |
 | HU37 | Configurar parámetros de nómina - Descuentos legales | Completada |
 
 ### Mario Ramos

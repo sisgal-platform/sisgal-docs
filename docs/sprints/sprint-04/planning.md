@@ -21,8 +21,8 @@ Desarrollar funcionalidades relacionadas con la parametrización de conceptos de
 
 | ID | Historia de usuario | Prioridad |
 |---|---|---|
-| HU39 | Configurar parámetros de nómina - Jornada laboral | Alta |
-| HU39 | Configurar parámetros de nómina - Recargos laborales | Alta |
+| HU47 | Configurar parámetros de nómina - Jornada laboral | Alta |
+| HU48 | Configurar parámetros de nómina - Recargos laborales | Alta |
 | HU37 | Configurar parámetros de nómina - Descuentos legales | Alta |
 
 ### Mario Ramos
@@ -134,7 +134,7 @@ El equipo se compromete a trabajar durante el Sprint 04 en las siguientes funcio
 
 ### Marisol Perez
 
-- HU39. Configurar parámetros de nómina - Jornada laboral.
+- HU47. Configurar parámetros de nómina - Jornada laboral.
 - HU39. Configurar parámetros de nómina - Recargos laborales.
 - HU37. Configurar parámetros de nómina - Descuentos legales.
 

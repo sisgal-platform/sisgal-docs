@@ -21,7 +21,7 @@ Avanzar en las funcionalidades de gestión de empleados y parametrización de SI
 | **HU21** | Registrar empleados | Mario Ramos |
 | **HU39** | Consulta de información de empleados | Mario Ramos |
 | **HT** | Creación del modelo de BD | Mario Ramos |
-| **HU42** | Parametrización de sucursales | Tatiana Sanchez |
+| **HU44** | Parametrización de sucursales | Tatiana Sanchez |
 | **HU40** | Detalle de un empleado | Mario Ramos |
 | **HU41** | Parametrización de cargos | Marisol Perez |
 
@@ -42,7 +42,7 @@ La secuencia se definió considerando las dependencias entre las funcionalidades
 
 ### Tatiana Sanchez
 
-- **HU42 — Parametrización de sucursales**
+- **HU44 — Parametrización de sucursales**
 
 ### Marisol Perez
 

@@ -33,12 +33,12 @@ Durante la revisión se verificó principalmente el alcance funcional de cada hi
 
 | Historia | Duda / aspecto a aclarar | Resolución |
 |---|---|---|
-| HU42 | Información que debe mostrarse en la consulta de incapacidades. | Se definió que la consulta debe permitir identificar al empleado y la información relevante de cada incapacidad. |
+| HU43 | Información que debe mostrarse en la consulta de incapacidades. | Se definió que la consulta debe permitir identificar al empleado y la información relevante de cada incapacidad. |
 | HU11 | Información requerida para registrar un préstamo. | Se validaron los datos necesarios para registrar el préstamo y su relación con el empleado. |
 | HU12 | Información necesaria para registrar una incapacidad. | Se confirmó que el registro debe asociarse a un empleado y contener la información requerida para gestionar la novedad. |
 | HU04 | Información que debe mostrarse en el historial de asistencia. | Se definió que la consulta debe permitir revisar las marcaciones e información de asistencia asociada a un empleado. |
 | HU05 | Información requerida para visualizar los ingresos del día. | Se acordó mostrar la información correspondiente a las personas que ingresan durante la jornada y mantenerla disponible para consulta. |
-| HU41 | Información que debe mostrarse en la consulta de préstamos. | Se confirmó que la consulta debe permitir identificar los préstamos asociados a los empleados y su estado. |
+| HU42 | Información que debe mostrarse en la consulta de préstamos. | Se confirmó que la consulta debe permitir identificar los préstamos asociados a los empleados y su estado. |
 
 ## Criterios de aceptación
 
@@ -46,12 +46,12 @@ Los criterios de aceptación fueron revisados para asegurar que las historias tu
 
 | Historia | Ajuste realizado |
 |---|---|
-| HU42 | Se precisó el alcance de la consulta de incapacidades y la información que debe presentar. |
+| HU43 | Se precisó el alcance de la consulta de incapacidades y la información que debe presentar. |
 | HU11 | Se verificaron los datos requeridos para registrar préstamos asociados a empleados. |
 | HU12 | Se precisó la información necesaria para registrar incapacidades de empleados. |
 | HU04 | Se aclaró el alcance de la consulta del historial de asistencia por empleado. |
 | HU05 | Se precisó la información que debe estar disponible para consultar los ingresos del día. |
-| HU41 | Se aclaró el alcance de la consulta de préstamos de empleados. |
+| HU42 | Se aclaró el alcance de la consulta de préstamos de empleados. |
 
 ## Cambios realizados
 
@@ -67,12 +67,12 @@ Como resultado del refinamiento:
 
 | Historia | Dependencia | Impacto |
 |---|---|---|
-| HU42 | Información de empleados y módulo de incapacidades. | Requiere contar con la información de empleados para realizar la consulta. |
+| HU43 | Información de empleados y módulo de incapacidades. | Requiere contar con la información de empleados para realizar la consulta. |
 | HU11 | Información de empleados. | El préstamo debe asociarse a un empleado existente. |
 | HU12 | Información de empleados. | La incapacidad debe asociarse a un empleado existente. |
 | HU04 | Registros de asistencia. | La consulta depende de la información de marcaciones almacenada. |
 | HU05 | Registros de asistencia. | Requiere disponer de información actualizada de las marcaciones del día. |
-| HU41 | Información de empleados y préstamos registrados. | Requiere que existan préstamos asociados a los empleados para realizar la consulta. |
+| HU42 | Información de empleados y préstamos registrados. | Requiere que existan préstamos asociados a los empleados para realizar la consulta. |
 
 ## Resultado del refinamiento
 
