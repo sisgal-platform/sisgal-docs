@@ -24,8 +24,8 @@ Las historias completadas fueron las siguientes:
 
 | ID | Historia de usuario | Responsable | Estado |
 |---|---|---|---|
-| HU39 | Configurar parámetros de nómina - Jornada laboral | Marisol Perez | Completada |
-| HU39 | Configurar parámetros de nómina - Recargos laborales | Marisol Perez | Completada |
+| HU47 | Configurar parámetros de nómina - Jornada laboral | Marisol Perez | Completada |
+| HU48 | Configurar parámetros de nómina - Recargos laborales | Marisol Perez | Completada |
 | HU37 | Configurar parámetros de nómina - Descuentos legales | Marisol Perez | Completada |
 | HU20 | Consultar liquidaciones de empleados | Mario Ramos | Completada |
 | HU09 | Modificar horario laboral de empleado | Mario Ramos | Completada |

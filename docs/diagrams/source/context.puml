@@ -4,15 +4,12 @@
 Person(admin, "Administrador", "Gestiona empleados, configura reglas y genera nómina")
 Person(employee, "Empleado", "Registra asistencia")
 
-System(system, "Sistema de Gestión de Asistencia y Nómina", "Permite registrar asistencia, calcular nómina y gestionar reglas laborales")
+System(system, "Sistema de Gestión de Asistencia y Nómina", "Permite gestionar asistencia, calcular nómina y administrar reglas laborales")
 
-System_Ext(biometric, "Dispositivo Biométrico", "Envía registros de asistencia")
 System_Ext(external_api, "Sistemas externos", "Consumen información vía API")
 
 Rel(admin, system, "Usa el sistema")
-Rel(employee, system, "Registra asistencia")
-
-Rel(biometric, system, "Envía registros de asistencia")
+Rel(employee, system, "Usa el sistema")
 Rel(system, external_api, "Expone API REST")
 
 @enduml

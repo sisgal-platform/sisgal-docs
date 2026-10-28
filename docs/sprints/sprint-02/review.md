@@ -21,7 +21,7 @@ Avanzar en las funcionalidades de gestión de empleados y parametrización del s
 | **HU21** | Registrar empleados | Mario Ramos | Completada |
 | **HU39** | Consulta de información de empleados | Mario Ramos | Completada |
 | **HU40** | Detalle de un empleado | Mario Ramos | Completada |
-| **HU42** | Parametrización de sucursales | Tatiana Sanchez | Completada |
+| **HU44** | Parametrización de sucursales | Tatiana Sanchez | Completada |
 | **HU41** | Parametrización de cargos | Marisol Perez | Completada |
 
 ## Resultado del Sprint

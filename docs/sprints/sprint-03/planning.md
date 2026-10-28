@@ -19,12 +19,12 @@ Desarrollar funcionalidades relacionadas con la gestión de novedades de emplead
 
 | ID | Historia de usuario | Responsable | Prioridad |
 |---|---|---|---|
-| HU42 | Consultar incapacidades | Mario Ramos | Alta |
+| HU43 | Consultar incapacidades | Mario Ramos | Alta |
 | HU11 | Registrar préstamos a empleados | Tatiana Sanchez | Alta |
 | HU12 | Registrar incapacidades de empleados | Mario Ramos | Alta |
 | HU04 | Consultar historial de asistencia por empleado | Marisol Perez | Alta |
 | HU05 | Visualizar ingresos del día en tiempo real | Marisol Perez | Alta |
-| HU41 | Consultar préstamos de empleados | Tatiana Sanchez | Alta |
+| HU42 | Consultar préstamos de empleados | Tatiana Sanchez | Alta |
 
 ## Alcance del Sprint
 
@@ -47,9 +47,9 @@ La asignación de historias se realizó considerando la disponibilidad de los in
 
 | Integrante | Historias asignadas |
 |---|---|
-| Mario Ramos | HU42, HU12 |
+| Mario Ramos | HU43, HU12 |
 | Marisol Perez | HU04, HU05 |
-| Tatiana Sanchez | HU11, HU41 |
+| Tatiana Sanchez | HU11, HU42 |
 
 Cada integrante será responsable del desarrollo y seguimiento de las historias asignadas durante el Sprint.
 
@@ -57,12 +57,12 @@ Cada integrante será responsable del desarrollo y seguimiento de las historias 
 
 | Historia | Dependencia |
 |---|---|
-| HU42 | Información de empleados y registros de incapacidades. |
+| HU43 | Información de empleados y registros de incapacidades. |
 | HU11 | Información de empleados para asociar el préstamo. |
 | HU12 | Información de empleados para registrar la incapacidad. |
 | HU04 | Registros de asistencia disponibles para consulta. |
 | HU05 | Información actualizada de las marcaciones del día. |
-| HU41 | Préstamos registrados y asociados a empleados. |
+| HU42 | Préstamos registrados y asociados a empleados. |
 
 ## Riesgos
 
@@ -83,9 +83,9 @@ Cada integrante será responsable del desarrollo y seguimiento de las historias 
 
 El equipo se compromete a trabajar durante el Sprint 03 en las siguientes historias:
 
-- HU42. Consultar incapacidades.
+- HU43. Consultar incapacidades.
 - HU11. Registrar préstamos a empleados.
 - HU12. Registrar incapacidades de empleados.
 - HU04. Consultar historial de asistencia por empleado.
 - HU05. Visualizar ingresos del día en tiempo real.
-- HU41. Consultar préstamos de empleados.
+- HU42. Consultar préstamos de empleados.

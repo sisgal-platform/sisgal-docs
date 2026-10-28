@@ -2,15 +2,11 @@
 
 ## Introducción
 
-El backend de SISGAL se compone de dos servicios: el **backend core**, que implementa la lógica principal de negocio y la API REST consumida por el frontend, y un **microservicio de integración biométrica**, dedicado a la conexión con el dispositivo. El core fue desarrollado con **NestJS**, cuya organización modular y el uso de inyección de dependencias facilitan la mantenibilidad y evolución de sus funcionalidades.
-
-La decisión de monolito modular aplica únicamente al core; el servicio de integración es independiente.
-
----
+El Backend Core de SISGAL implementa la lógica principal de negocio y expone la API REST consumida por el frontend. Está desarrollado con NestJS y organizado como monolito modular. No hay un microservicio biométrico implementado.
 
 ## Principios de diseño
 
-El backend core fue diseñado siguiendo los siguientes principios:
+El backend core sigue estos principios arquitectónicos:
 
 - Separación de responsabilidades.
 - Bajo acoplamiento entre módulos.
@@ -19,41 +15,27 @@ El backend core fue diseñado siguiendo los siguientes principios:
 - Encapsulamiento de reglas de negocio.
 - Reutilización de componentes.
 
----
-
 ## Organización del sistema
 
-El backend core adopta una arquitectura de monolito modular. Sus módulos funcionales incluyen autenticación, empleados, asistencia, jornadas laborales, nómina y configuración.
+El Backend Core adopta una arquitectura de monolito modular. Sus módulos funcionales documentados incluyen autenticación, empleados, asistencia, jornadas laborales, nómina y configuración.
 
-Cada módulo contiene sus controladores, casos de uso, servicios, entidades, repositorios y DTOs, según corresponda a su responsabilidad.
+Cada módulo puede contener controladores, casos de uso, servicios, entidades, repositorios y DTOs según la responsabilidad que refleje la implementación. Las clases concretas deben verificarse en el repositorio del core.
 
-Se propone implementar un módulo transversal de auditoría reutilizable en el sistema. Su alcance, los eventos que registrará y la conexión con la base de datos de auditoría están pendientes de definición; la documentación no lo presenta como una funcionalidad ya implementada.
-
----
+Se propone implementar un módulo transversal de auditoría reutilizable. Su alcance y su integración están pendientes; el modelo de datos previsto se describe en el [diagrama de base de datos](../diagrams/database.md). La base de auditoría PostgreSQL es independiente y todavía no está conectada.
 
 ## Persistencia
 
-La arquitectura contempla dos bases de datos independientes, ambas PostgreSQL: la base principal para los datos del sistema y las marcaciones biométricas, y una base de auditoría cuyo uso está por definir. La persistencia del core se implementa mediante TypeORM.
-
-El acceso a la base principal se encuentra encapsulado en la capa de infraestructura, evitando dependencias directas desde la lógica del negocio.
-
----
+La base principal utiliza PostgreSQL en Supabase y el Backend Core usa TypeORM para acceder a los datos. La base independiente de auditoría también está prevista en PostgreSQL; su conexión y persistencia no están implementadas.
 
 ## Comunicación
 
-La comunicación entre el frontend y el backend core se realiza mediante una API REST utilizando JSON.
+El frontend se comunica con el Backend Core mediante una API REST que usa JSON. El frontend utiliza Supabase JS para autenticación y no accede directamente a la base de datos.
 
-El microservicio de integración recibe las marcaciones del dispositivo biométrico y las registra en la base de datos principal. El servicio es independiente del core.
-
----
+La integración con el dispositivo biométrico no se documenta como servicio independiente porque no existe un microservicio implementado. El modo de conexión del dispositivo queda pendiente de confirmar.
 
 ## Seguridad
 
-El backend core implementará mecanismos de autenticación y autorización mediante JWT.
-
-Las operaciones del core serán protegidas utilizando Guards y Roles definidos por el sistema.
-
----
+La arquitectura contempla autenticación backend con JWT, guards y roles. Su configuración efectiva y el flujo de emisión/validación de tokens deben verificarse en el código antes de describirlos como implementados.
 
 ## Diagramas
 

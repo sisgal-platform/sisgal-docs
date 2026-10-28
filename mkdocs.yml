@@ -180,12 +180,14 @@ nav:
               - 17/10/2026: sprints/sprint-05/dailies/2026-10-17.md
           - Review: sprints/sprint-05/review.md
           - Retrospectiva: sprints/sprint-05/retrospective.md
+      - Sprint 06:
+          - Resumen: sprints/sprint-06/index.md
+          - Planning: sprints/sprint-06/planning.md
+          - Refinamientos:
+              - Refinamiento 01: sprints/sprint-06/refinement-01.md
+          - Dailies:
+              - 20/10/2026: sprints/sprint-06/dailies/2026-10-20.md
+              - 24/10/2026: sprints/sprint-06/dailies/2026-10-24.md
+          - Review: sprints/sprint-06/review.md
+          - Retrospectiva: sprints/sprint-06/retrospective.md
 
-  - Manual técnico:
-      - Introducción: technical-guide/index.md
-      - Instalación y entorno: technical-guide/setup.md
-      - Configuración: technical-guide/configuration.md
-      - Operación y despliegue: technical-guide/operations.md
-      - Mantenimiento: technical-guide/maintenance.md
-      - Seguridad: technical-guide/security.md
-      - Desarrollo y contribución: technical-guide/contributing.md

@@ -20,8 +20,8 @@ Revisar las historias de usuario candidatas para el Sprint 04, validar su alcanc
 
 | ID | Historia de usuario | Estado |
 |---|---|---|
-| HU39 | Configurar parámetros de nómina - Jornada laboral | Refinada |
-| HU39 | Configurar parámetros de nómina - Recargos laborales | Refinada |
+| HU47 | Configurar parámetros de nómina - Jornada laboral | Refinada |
+| HU48 | Configurar parámetros de nómina - Recargos laborales | Refinada |
 | HU37 | Configurar parámetros de nómina - Descuentos legales | Refinada |
 
 ### Mario Ramos

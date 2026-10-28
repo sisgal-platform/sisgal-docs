@@ -1,6 +1,6 @@
 # Diagrama de contenedores (C4)
 
-El diagrama presenta los contenedores principales de SISGAL y sus relaciones con las personas usuarias, el dispositivo biométrico y las bases de datos. El backend core es un monolito modular; el servicio biométrico es un microservicio independiente.
+El diagrama presenta los contenedores implementados de SISGAL y sus relaciones con las personas usuarias, Supabase Auth y las bases de datos. El Backend Core es el único backend implementado y está organizado como monolito modular.
 
 ![Diagrama de contenedores C4 de SISGAL](images/containers.svg)
 
@@ -8,20 +8,21 @@ El diagrama presenta los contenedores principales de SISGAL y sus relaciones con
 
 ## Contenedores y responsabilidades
 
-- **Frontend Web (React):** presenta la interfaz para el administrador y el empleado.
-- **Backend Core (Node.js/NestJS):** expone la API REST y contiene los módulos funcionales del sistema. La arquitectura de monolito modular aplica únicamente a este servicio.
-- **Servicio de Integración (Node.js/NestJS):** se comunica con el dispositivo biométrico y escribe sus marcaciones en la base de datos principal.
-- **Base de datos principal (PostgreSQL/Supabase):** almacena los datos del sistema y las marcaciones biométricas.
-- **Base de datos de auditoría (PostgreSQL):** es independiente de la principal. El alcance de su integración aún está por definir.
-- **Dispositivo Biométrico:** genera y envía registros de asistencia.
+- **Frontend Web (React):** presenta la interfaz para el administrador y el empleado. Usa Supabase JS para autenticación; no consulta directamente la base de datos.
+- **Backend Core (Node.js/NestJS):** expone la API REST y contiene los módulos funcionales del sistema. El monolito modular aplica a este backend.
+- **Base de datos principal (PostgreSQL/Supabase):** almacena los datos del sistema.
+- **Base de datos de auditoría (PostgreSQL):** está prevista como base independiente, pero aún no está conectada.
+- **Supabase Auth:** servicio externo utilizado por el frontend para autenticar usuarios.
 
 ## Relaciones principales
 
 1. El administrador y el empleado usan el frontend.
-2. El frontend consume la API REST del backend core mediante HTTPS y JSON.
-3. El servicio de integración recibe marcaciones del dispositivo y las registra en la base principal.
-4. El backend core consulta y administra los datos del sistema en la base principal.
+2. El frontend consume la API REST del Backend Core mediante HTTPS y JSON.
+3. El frontend delega la autenticación a Supabase Auth mediante HTTPS; no accede directamente a PostgreSQL.
+4. El Backend Core accede a la base principal mediante TypeORM.
 
-> **Auditoría:** existe una base PostgreSQL independiente. Se propone incorporar un módulo de auditoría transversal en el core, pero aún no se han definido su integración ni el flujo de persistencia. Por eso, el diagrama no atribuye escrituras a la base de auditoría.
+> **Auditoría:** el modelo previsto se documenta en [Modelo de datos de auditoría](database.md). La base y el módulo transversal todavía no están conectados al sistema; no se representan escrituras activas.
 
-La vista de despliegue propuesta se documenta por separado en [Despliegue de los contenedores](deployment.md).
+> **Dispositivo biométrico:** no hay integración biométrica implementada. El flujo y la ubicación futura de esa integración quedan por definir.
+
+La vista de despliegue prevista se documenta por separado en [Despliegue](deployment.md).

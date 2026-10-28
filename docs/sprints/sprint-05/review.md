@@ -5,58 +5,71 @@
 | Campo | Información |
 |---|---|
 | **Sprint** | Sprint 05 |
-| **Fecha prevista** | 18/10/2026 |
 | **Periodo** | 12/10/2026 – 18/10/2026 |
 | **Participantes** | Mario Ramos, Marisol Perez, Tatiana Sanchez |
-| **Estado de la ceremonia** | Pendiente de realizar |
+| **Resultado del Sprint** | 7 de 7 historias completadas |
+| **Cumplimiento** | 100 % |
 
 ## Objetivo de la revisión
 
-Evaluar los resultados obtenidos durante el Sprint 05, verificar el estado de las historias de usuario comprometidas y revisar el incremento funcional alcanzado en los procesos de cálculo, liquidación, exportación y consulta de información de nómina.
+Evaluar los resultados del Sprint 05, verificar el estado final de las historias de usuario planificadas y registrar el incremento funcional obtenido en los procesos de cálculo, liquidación, exportación y consulta de información de nómina.
 
-## Historias planificadas y resultados
+## Historias de usuario y resultados
 
 | ID | Historia de usuario | Responsable | Resultado |
 |---|---|---|---|
-| HU13 | Calcular nómina automáticamente | Marisol Perez | Pendiente de validar |
-| HU10 | Descontar cuotas de préstamos automáticamente | Marisol Perez | Pendiente de validar |
-| HU16 | Calcular primas | Marisol Perez | Pendiente de validar |
-| HU29 | Exportar nómina en PDF | Mario Ramos | Pendiente de validar |
-| HU35 | Consulta de indicadores en dashboard | Mario Ramos | Pendiente de validar |
-| HU18 | Generar preliquidación de nómina | Tatiana Sanchez | Pendiente de validar |
-| HU19 | Crear liquidación de nómina | Tatiana Sanchez | Pendiente de validar |
+| HU13 | Calcular nómina automáticamente | Marisol Perez | Completada |
+| HU10 | Descontar cuotas de préstamos automáticamente | Marisol Perez | Completada |
+| HU16 | Calcular primas | Marisol Perez | Completada |
+| HU29 | Exportar nómina en PDF | Mario Ramos | Completada |
+| HU35 | Consulta de indicadores en dashboard | Mario Ramos | Completada |
+| HU18 | Generar preliquidación de nómina | Tatiana Sanchez | Completada |
+| HU19 | Crear liquidación de nómina | Tatiana Sanchez | Completada |
 
-## Evaluación del incremento
+## Incremento funcional obtenido
 
-La revisión se centrará en verificar los avances del cálculo automático de nómina y su relación con las funcionalidades de preliquidación y liquidación definitiva. También se evaluarán los resultados de la incorporación de los conceptos de préstamos y primas, la generación de documentos PDF y la consulta de indicadores administrativos.
+Al finalizar el Sprint, se completaron las funcionalidades previstas para fortalecer los procesos de nómina de SISGAL.
 
-Para considerar una historia completada, se deberá verificar el cumplimiento de sus criterios de aceptación y el comportamiento esperado de la funcionalidad desarrollada.
+El incremento incluyó:
+
+- Cálculo automático de nómina.
+- Descuento automático de cuotas de préstamos.
+- Cálculo de primas.
+- Generación de preliquidaciones.
+- Creación de liquidaciones de nómina.
+- Exportación de nómina en formato PDF.
+- Consulta de indicadores mediante el dashboard administrativo.
+
+Estas funcionalidades amplían las capacidades del sistema para procesar la información de los empleados y facilitar la consulta de los resultados de nómina.
 
 ## Indicadores de cumplimiento
 
 | Indicador | Resultado |
-|---|---|
+|---|---:|
 | Historias planificadas | 7 |
-| Historias completadas | Pendiente de validar |
-| Historias pendientes o trasladadas | Pendiente de validar |
-| Porcentaje de cumplimiento | Pendiente de calcular |
+| Historias completadas | 7 |
+| Historias pendientes | 0 |
+| Historias trasladadas | 0 |
+| Porcentaje de cumplimiento | 100 % |
 
-El porcentaje de cumplimiento se calculará al cierre de la revisión, dividiendo el número de historias completadas entre las siete historias planificadas y multiplicando el resultado por cien.
+El porcentaje de cumplimiento se calculó mediante la siguiente fórmula:
 
-## Observaciones de la Review
+**Cumplimiento = (Historias completadas / Historias planificadas) × 100**
 
-**Aspectos positivos:** registrar los resultados concretos de las funcionalidades demostradas, su integración con los componentes existentes y el cumplimiento de los criterios de aceptación.
+**Cumplimiento = (7 / 7) × 100 = 100 %**
 
-**Aspectos por ajustar:** documentar los errores, inconsistencias, validaciones pendientes o dependencias que hayan impedido completar alguna funcionalidad.
+## Resultado general
 
-## Decisiones y acciones posteriores
+El Sprint 05 alcanzó el 100 % de cumplimiento del alcance planificado. Las siete historias de usuario fueron completadas, incluyendo las dos historias trasladadas desde el Sprint 04: HU10, correspondiente al descuento automático de cuotas de préstamos, y HU16, correspondiente al cálculo de primas.
 
-Las historias que cumplan sus criterios de aceptación se registrarán como completadas. Las historias que no hayan alcanzado el resultado esperado deberán permanecer pendientes o trasladarse al siguiente Sprint, de acuerdo con la priorización del backlog.
+El resultado permitió avanzar en la consolidación del proceso de nómina, desde el cálculo de los conceptos correspondientes hasta la generación de liquidaciones y la consulta de información administrativa.
 
-Los ajustes identificados durante la revisión se registrarán en Azure DevOps para mantener la trazabilidad de las acciones posteriores.
+## Observaciones
+
+No se registran historias pendientes al cierre del Sprint. La documentación de las pruebas ejecutadas, las demostraciones realizadas y las observaciones específicas de la sesión de revisión podrá complementarse con la evidencia disponible en Azure DevOps.
 
 ## Conclusiones
 
-**Pendiente de completar después de la Review del 18/10/2026.**
+El Sprint 05 finalizó con las siete historias de usuario completadas y un cumplimiento del 100 %. Se alcanzó el alcance funcional previsto para la iteración y no fue necesario trasladar historias al siguiente Sprint.
 
-En esta sección se documentará el resultado general del Sprint, el incremento aceptado por el equipo, las historias finalizadas y las decisiones adoptadas respecto al trabajo pendiente.
+El resultado constituye un avance en la integración de las funcionalidades de cálculo, liquidación y consulta de información de nómina dentro de SISGAL.

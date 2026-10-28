@@ -44,4 +44,4 @@ Las historias se organizarán de acuerdo con las responsabilidades definidas par
 
 Las tareas técnicas específicas, los criterios de aceptación y el seguimiento de las historias se gestionarán mediante Azure DevOps.
 
-**Duración de la sesión:** Pendiente de confirmar.
+**Duración de la sesión:** 1 hora.

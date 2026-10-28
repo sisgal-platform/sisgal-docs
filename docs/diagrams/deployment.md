@@ -1,19 +1,22 @@
-# Despliegue de los contenedores
+# Despliegue previsto
 
-Esta vista complementa los diagramas C4 con las plataformas de despliegue indicadas: Vercel para el frontend React y Render para ambos servicios de backend. No sustituye el [diagrama C4 de contenedores](containers.md).
+Esta vista representa las plataformas de destino confirmadas para el frontend y el Backend Core. Los pipelines automáticos aún no están implementados; consulta su diseño en [GitHub Actions](../deployment/github-actions.md).
 
 ![Diagrama de despliegue de SISGAL](images/deployment.svg)
 
 [Ver fuente PlantUML](source/deployment.puml)
 
-## Elementos de despliegue
+## Elementos
 
-- **Vercel:** aloja el frontend React, construido con Vite.
-- **Render:** aloja el Backend Core y el microservicio de integración biométrica.
-- **Base de datos principal:** PostgreSQL alojado en Supabase, según la documentación del stack.
-- **Base de datos de auditoría:** PostgreSQL independiente; su plataforma de alojamiento y su integración siguen por definir.
-- **Dispositivo biométrico:** envía marcaciones al microservicio de integración.
+- **Vercel:** plataforma de destino del frontend React construido con Vite.
+- **Render:** plataforma de destino del Backend Core; `develop` debe apuntar a un servicio de pruebas separado de producción.
+- **Base de datos principal:** PostgreSQL alojado en Supabase, según la configuración documentada.
+- **Supabase Auth:** servicio utilizado por el frontend para autenticación.
+- **Base de datos de auditoría:** PostgreSQL independiente en diseño; todavía no está conectada y el alojamiento no se ha definido.
+- **Dispositivo biométrico:** la integración no está implementada y no se incluye un flujo de datos.
 
-## Flujos representados
+## Relaciones
 
-El navegador accede al frontend en Vercel. El frontend consume la API REST del Backend Core en Render. El servicio de integración, también en Render, recibe las marcaciones y las escribe en la base de datos principal; el Backend Core consulta esa misma base. La relación de auditoría se marca como propuesta y pendiente de definición.
+El navegador accede al frontend en Vercel. El frontend consume la API REST del Backend Core y se comunica con Supabase Auth. El Backend Core accede a la base principal. La conexión del módulo de auditoría con su base se representa como diseño pendiente; no es un flujo activo.
+
+Las plataformas son destinos previstos. La publicación automática dependerá de configurar los workflows y secretos descritos en [Pipelines con GitHub Actions](../deployment/github-actions.md).

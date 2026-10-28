@@ -24,7 +24,7 @@ El Sprint contempla funcionalidades para registrar y consultar empleados, visual
 | **HU21** | Registrar empleados | Mario Ramos | Completada |
 | **HU39** | Consulta de información de empleados | Mario Ramos | Completada |
 | **HT** | Creación del modelo de BD | Mario Ramos | Completada |
-| **HU42** | Parametrización de sucursales | Tatiana Sanchez | Completada |
+| **HU44** | Parametrización de sucursales | Tatiana Sanchez | Completada |
 | **HU40** | Detalle de un empleado | Mario Ramos | Completada |
 | **HU41** | Parametrización de cargos | Marisol Perez | Completada |
 

@@ -7,63 +7,66 @@
 | **Sprint** | Sprint 05 |
 | **Periodo** | 12/10/2026 – 18/10/2026 |
 | **Duración** | 1 semana |
-| **Estado** | En progreso |
+| **Estado** | Completado |
 | **Historias planificadas** | 7 |
+| **Historias completadas** | 7 |
+| **Cumplimiento** | 100 % |
 | **Objetivo** | Cálculo automático y consolidación de nómina |
 
 ## Objetivo del Sprint
 
-Desarrollar funcionalidades orientadas al cálculo automático de nómina, la gestión de conceptos pendientes y la generación de resultados de liquidación. Asimismo, se busca incorporar mecanismos para exportar la información de nómina en formato PDF y consultar indicadores relevantes mediante el dashboard administrativo.
+Desarrollar funcionalidades orientadas al cálculo automático de nómina, la gestión de conceptos laborales pendientes y la generación de resultados de liquidación. Asimismo, incorporar mecanismos para exportar la información de nómina en formato PDF y consultar indicadores relevantes mediante el dashboard administrativo.
 
-Este Sprint da continuidad a las funcionalidades de parametrización y cálculo desarrolladas en las iteraciones anteriores, incorporando las historias pendientes relacionadas con el descuento automático de cuotas de préstamos y el cálculo de primas, además de avanzar en la generación de preliquidaciones y liquidaciones definitivas.
+Este Sprint dio continuidad a las funcionalidades de parametrización y cálculo desarrolladas en las iteraciones anteriores, incorporando las historias pendientes relacionadas con el descuento automático de cuotas de préstamos y el cálculo de primas, además de las funcionalidades de preliquidación, liquidación definitiva, exportación de resultados y consulta de indicadores.
 
 ## Historias de usuario
 
 ### Marisol Perez
 
-| ID | Historia de usuario | Estado inicial |
+| ID | Historia de usuario | Estado final |
 |---|---|---|
-| HU13 | Calcular nómina automáticamente | Pendiente |
-| HU10 | Descontar cuotas de préstamos automáticamente | Pendiente, trasladada del Sprint 04 |
-| HU16 | Calcular primas | Pendiente, trasladada del Sprint 04 |
+| HU13 | Calcular nómina automáticamente | Completada |
+| HU10 | Descontar cuotas de préstamos automáticamente | Completada |
+| HU16 | Calcular primas | Completada |
 
 ### Mario Ramos
 
-| ID | Historia de usuario | Estado inicial |
+| ID | Historia de usuario | Estado final |
 |---|---|---|
-| HU29 | Exportar nómina en PDF | Pendiente |
-| HU35 | Consulta de indicadores en dashboard | Pendiente |
+| HU29 | Exportar nómina en PDF | Completada |
+| HU35 | Consulta de indicadores en dashboard | Completada |
 
 ### Tatiana Sanchez
 
-| ID | Historia de usuario | Estado inicial |
+| ID | Historia de usuario | Estado final |
 |---|---|---|
-| HU18 | Generar preliquidación de nómina | Pendiente |
-| HU19 | Crear liquidación de nómina | Pendiente |
+| HU18 | Generar preliquidación de nómina | Completada |
+| HU19 | Crear liquidación de nómina | Completada |
 
 ## Alcance del Sprint
 
-El alcance se organiza en cuatro áreas funcionales. La primera comprende el cálculo automático de nómina y la incorporación de los conceptos que quedaron pendientes en la iteración anterior. La segunda corresponde a la generación de preliquidaciones y liquidaciones definitivas. La tercera incluye la exportación de los resultados de nómina en formato PDF. Finalmente, la cuarta contempla la consulta de indicadores mediante el dashboard administrativo.
+El Sprint comprendió cuatro áreas funcionales:
+
+1. **Cálculo de nómina:** cálculo automático e incorporación de los conceptos asociados a préstamos y primas.
+2. **Procesamiento de liquidaciones:** generación de preliquidaciones y creación de liquidaciones definitivas.
+3. **Generación de documentos:** exportación de información de nómina en formato PDF.
+4. **Consulta de información administrativa:** visualización de indicadores mediante el dashboard.
+
+Las siete historias de usuario planificadas fueron completadas, cubriendo el alcance establecido para la iteración.
 
 ## Organización del trabajo
 
-| Integrante | Historias asignadas |
+| Integrante | Historias completadas |
 |---|---|
-| **Marisol Perez** | HU13 - Cálculo automático de nómina; HU10 - Descuento automático de cuotas de préstamos; HU16 - Cálculo de primas |
-| **Mario Ramos** | HU29 - Exportación de nómina en PDF; HU35 - Consulta de indicadores en dashboard |
-| **Tatiana Sanchez** | HU18 - Generación de preliquidación de nómina; HU19 - Creación de liquidación de nómina |
+| **Marisol Perez** | HU13 - Cálculo automático de nómina; HU10 - Descuento automático de cuotas de préstamos; HU16 - Cálculo de primas. |
+| **Mario Ramos** | HU29 - Exportación de nómina en PDF; HU35 - Consulta de indicadores en dashboard. |
+| **Tatiana Sanchez** | HU18 - Generación de preliquidación de nómina; HU19 - Creación de liquidación de nómina. |
 
 ## Dependencias identificadas
 
-| Historia | Dependencias principales |
-|---|---|
-| HU13 - Calcular nómina automáticamente | Parámetros laborales y legales, clasificación de horas, información salarial, novedades y conceptos aplicables a la nómina. |
-| HU10 - Descontar cuotas de préstamos automáticamente | Préstamos registrados, cuotas pendientes e información del empleado. |
-| HU16 - Calcular primas | Información salarial, periodo de cálculo y reglas de negocio aplicables. |
-| HU18 - Generar preliquidación de nómina | Información de asistencia, parámetros de nómina y resultados de los cálculos requeridos. |
-| HU19 - Crear liquidación de nómina | Datos de la preliquidación, cálculos validados y reglas de liquidación definidas. |
-| HU29 - Exportar nómina en PDF | Información de nómina disponible y estructura de los datos que deben incluirse en el documento. |
-| HU35 - Consulta de indicadores en dashboard | Datos disponibles en el sistema y definición de los indicadores que se mostrarán. |
+El desarrollo contempló la relación entre los parámetros laborales y legales, la clasificación de horas trabajadas, la información salarial y las novedades de los empleados.
+
+Asimismo, la generación de preliquidaciones y liquidaciones se relacionó con los resultados de los cálculos de nómina. La exportación en PDF y los indicadores del dashboard utilizaron la información correspondiente a sus respectivas funcionalidades.
 
 ## Flujo funcional de referencia
 
@@ -81,19 +84,34 @@ Consulta y exportación de resultados
 
 La consulta de indicadores constituye una funcionalidad complementaria que utiliza la información disponible en el sistema para presentar datos relevantes para la administración.
 
-## Riesgos
+## Riesgos identificados
 
-Se consideran como riesgos potenciales las dependencias entre los cálculos de nómina y las funcionalidades de preliquidación y liquidación, la necesidad de validar la consistencia de los valores calculados y el tiempo disponible para completar siete historias en una semana. También será necesario verificar que la información generada pueda ser utilizada correctamente por los mecanismos de exportación y consulta de indicadores.
+Durante la planificación se consideraron los siguientes riesgos potenciales:
 
-## Seguimiento
-
-El seguimiento se realizará mediante las reuniones Daily previstas para el 13 y el 17 de octubre. En estas reuniones se revisarán los avances, las actividades pendientes, las dependencias entre historias y los posibles impedimentos.
+- Dependencias entre los cálculos de nómina y los procesos de preliquidación y liquidación.
+- Necesidad de verificar la consistencia de los valores calculados.
+- Integración de los resultados con los mecanismos de exportación y consulta.
+- Tiempo disponible para desarrollar y validar siete historias durante una semana.
 
 ## Resultado del Sprint
 
-*Pendiente de registrar al cierre del Sprint, el 18/10/2026.*
+El Sprint 05 finalizó con las **7 historias de usuario completadas de las 7 planificadas**, alcanzando un cumplimiento del **100 %**.
 
-En esta sección se documentarán las historias completadas, las funcionalidades pendientes o trasladadas, el incremento obtenido y el nivel de cumplimiento del alcance planificado.
+Se completaron las funcionalidades de cálculo automático de nómina, descuento de cuotas de préstamos, cálculo de primas, generación de preliquidaciones, creación de liquidaciones, exportación de nómina en PDF y consulta de indicadores en el dashboard administrativo.
+
+Con este resultado, el equipo completó el alcance planificado para la iteración y avanzó en la consolidación de los procesos centrales de nómina de SISGAL.
+
+## Indicadores de cumplimiento
+
+| Indicador | Resultado |
+|---|---:|
+| Historias planificadas | 7 |
+| Historias completadas | 7 |
+| Historias pendientes al cierre | 0 |
+| Historias trasladadas al siguiente Sprint | 0 |
+| Porcentaje de cumplimiento | 100 % |
+
+El porcentaje de cumplimiento se calculó dividiendo las historias completadas entre las historias planificadas y multiplicando el resultado por cien.
 
 ## Ceremonias
 
@@ -104,8 +122,8 @@ En esta sección se documentarán las historias completadas, las funcionalidades
 - [Review](review.md)
 - [Retrospectiva](retrospective.md)
 
-## Estado actual
+## Estado final
 
-**Sprint en progreso.**
+**Sprint completado.**
 
-El Sprint comenzó el 12/10/2026 y tiene como fecha de finalización prevista el 18/10/2026.
+El Sprint 05 se desarrolló entre el 12 y el 18 de octubre de 2026. Las siete historias de usuario comprometidas fueron completadas, sin historias pendientes de traslado al siguiente Sprint.

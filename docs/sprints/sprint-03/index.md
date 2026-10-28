@@ -19,12 +19,12 @@ Desarrollar funcionalidades relacionadas con la gestión de préstamos e incapac
 
 | ID | Historia de usuario | Responsable | Estado |
 |---|---|---|---|
-| HU42 | Consultar incapacidades | Mario Ramos | Completada |
+| HU43 | Consultar incapacidades | Mario Ramos | Completada |
 | HU11 | Registrar préstamos a empleados | Tatiana Sanchez | Completada |
 | HU12 | Registrar incapacidades de empleados | Mario Ramos | Completada |
 | HU04 | Consultar historial de asistencia por empleado | Marisol Perez | Completada |
 | HU05 | Visualizar ingresos del día en tiempo real | Marisol Perez | Completada |
-| HU41 | Consultar préstamos de empleados | Tatiana Sanchez | Completada |
+| HU42 | Consultar préstamos de empleados | Tatiana Sanchez | Completada |
 
 ## Alcance del Sprint
 

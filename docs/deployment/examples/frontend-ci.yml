@@ -1,0 +1,87 @@
+name: Frontend CI/CD template
+
+on:
+  pull_request:
+    branches: [develop]
+  push:
+    branches: [develop]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: frontend-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate frontend
+    runs-on: ubuntu-latest
+    env:
+      VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+      VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY }}
+      VITE_API_URL: ${{ vars.VITE_API_URL }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js and npm
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ vars.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test, enforce 80% line coverage, and create LCOV
+        run: npm run test:coverage -- --coverage.thresholds.lines=80 --coverage.reporter=lcov
+
+      - name: Build
+        run: npm run build
+
+      - name: Analyze with SonarQube Cloud and wait for Quality Gate
+        uses: SonarSource/sonarqube-scan-action@v8.3.0
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.organization=${{ vars.SONAR_ORGANIZATION }}
+            -Dsonar.projectKey=${{ vars.SONAR_PROJECT_KEY }}
+            -Dsonar.sources=${{ vars.SONAR_SOURCES }}
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+            -Dsonar.qualitygate.wait=true
+
+  deploy:
+    name: Deploy frontend preview to Vercel
+    if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
+    needs: validate
+    runs-on: ubuntu-latest
+    environment: develop
+    env:
+      VERCEL_ORG_ID: ${{ vars.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js and npm
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ vars.NODE_VERSION }}
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: Pull Vercel Preview environment
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build deployment artifacts
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Publish Preview deployment
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}

@@ -2,62 +2,47 @@
 
 ## 1. Objetivo
 
-Este documento describe las principales tecnologías y herramientas utilizadas para desarrollar SISGAL, así como su responsabilidad dentro de la solución.
+Este documento registra las principales tecnologías y herramientas declaradas para SISGAL. Los rangos de versión corresponden a los manifiestos de frontend y Backend Core compartidos para la documentación.
 
 ## 2. Tecnologías principales
 
 | Componente | Tecnología | Responsabilidad |
 |---|---|---|
-| Frontend | React | Construcción de la interfaz de usuario. |
-| Lenguaje del frontend | TypeScript | Incorporar tipado estático y mejorar la mantenibilidad del código. |
-| Herramienta de construcción del frontend | Vite | Ejecutar el entorno de desarrollo y generar los artefactos de compilación. |
-| Backend | NestJS | Implementar la API y la lógica del servidor mediante módulos y servicios. |
-| Lenguaje del backend | TypeScript | Mantener tipado y consistencia en la implementación del servidor. |
-| Persistencia relacional | PostgreSQL | Almacenar información estructurada en la base principal del sistema y en la base independiente de auditoría. |
-| Acceso a datos | TypeORM | Mapear entidades y gestionar operaciones sobre la base de datos desde el backend. |
-| Comunicación | API REST | Permitir la comunicación entre el frontend y el backend mediante solicitudes HTTP. |
+| Frontend | React `^19.2.8`, React DOM `^19.2.8` | Construcción de la interfaz de usuario. |
+| Navegación | React Router `^7.18.3` | Gestión de rutas del frontend. |
+| Herramienta de construcción | Vite `^8.2.2` | Servidor de desarrollo y generación de la compilación. |
+| Lenguaje del frontend | TypeScript `~6.0.2` | Tipado estático del cliente. |
+| Estilos y UI | Tailwind CSS `^3.4.19`, Radix UI | Estilos y primitivas de interfaz. |
+| Cliente HTTP | Axios `^1.20.0` | Consumo de la API REST del Backend Core. |
+| Autenticación frontend | `@supabase/supabase-js ^2.116.0` | Autenticación; el frontend no accede directamente a la base de datos. |
+| Backend Core | NestJS `^12.0.3` | API y lógica de negocio organizada en módulos. |
+| Lenguaje del backend | TypeScript `^5.7.3` | Tipado estático del servidor. |
+| Persistencia | PostgreSQL y driver `pg ^8.23.0` | Almacenamiento relacional principal. |
+| Acceso a datos | TypeORM `^1.1.1` | Persistencia utilizada por el Backend Core. |
+| Pruebas frontend | Vitest `^5.0.0`, Testing Library | Pruebas unitarias y de componentes. |
+| Pruebas backend | Jest `^30.0.0`, Supertest `^7.0.0` | Pruebas del Backend Core y de extremo a extremo. |
+| Runtime y gestor de paquetes | Node.js y npm | Entorno de ejecución e instalación de dependencias; versiones exactas pendientes de fijar. |
 
 ## 3. Herramientas complementarias
 
 | Herramienta | Uso |
 |---|---|
-| Git | Control de versiones del código fuente. |
-| GitHub | Hospedaje de repositorios y colaboración en el desarrollo. |
-| Tailwind CSS | Aplicación de estilos mediante clases utilitarias, según la configuración del frontend. |
-| MkDocs Material | Organización y publicación de la documentación técnica del proyecto. |
-| Supabase | Servicio utilizado para alojar y administrar la base de datos PostgreSQL, según la configuración del entorno. |
+| Vercel | Plataforma de destino del frontend. |
+| Render | Plataforma de destino del Backend Core. |
+| GitHub Actions | Plataforma elegida para pipelines de validación y despliegue; workflows aún no implementados. |
+| Git y GitHub | Control de versiones, repositorios y colaboración. |
+| Supabase | Autenticación del frontend y alojamiento de la base PostgreSQL principal. |
+| MkDocs Material | Organización y publicación de la documentación técnica. |
+| SonarQube Cloud | Propuesta para análisis estático; cuenta/proyectos aún no configurados. |
 
-La configuración exacta de cada herramienta debe verificarse en los archivos del proyecto y en los entornos utilizados por el equipo.
+React Hook Form no aparece en el manifiesto frontend compartido y no se registra como dependencia vigente. La base de auditoría PostgreSQL está diseñada como independiente, pero todavía no está conectada a SISGAL. No hay un microservicio biométrico implementado.
 
-## 4. Criterios de selección
+## 4. Configuración
 
-Las tecnologías se seleccionan teniendo en cuenta los siguientes criterios:
+El frontend utiliza `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` y `VITE_API_URL`. El Backend Core utiliza `SUPABASE_DB_URL` y `SUPABASE_URL`. Consulta el [Manual técnico de configuración](../technical-guide/configuration.md).
 
-- **Mantenibilidad:** facilitar la lectura, modificación y evolución del código.
-- **Modularidad:** permitir organizar las funcionalidades en componentes con responsabilidades definidas.
-- **Tipado:** detectar errores durante el desarrollo y mejorar la claridad de los contratos.
-- **Integración:** facilitar la comunicación entre la interfaz, la API y la base de datos.
-- **Persistencia e integridad:** contar con un modelo relacional para gestionar entidades y sus relaciones.
-- **Documentación y soporte:** disponer de documentación técnica para resolver problemas y mantener la solución.
+## 5. Pipelines
 
-## 5. Lineamientos de uso
+Se proponen workflows separados para el frontend y el Backend Core. Cada uno validará lint, pruebas, cobertura mínima global de líneas de 80%, compilación y Quality Gate de Sonar antes de desplegar la aplicación correspondiente. Consulta [Pipelines con GitHub Actions](../deployment/github-actions.md).
 
-1. Mantener TypeScript en los componentes principales del frontend y del backend.
-2. Gestionar las dependencias mediante el administrador de paquetes definido por cada aplicación.
-3. Mantener las credenciales y variables de entorno fuera del código fuente.
-4. Utilizar Git para registrar los cambios y facilitar su revisión.
-5. Evitar incorporar dependencias nuevas sin evaluar su necesidad, compatibilidad y mantenimiento.
-6. Mantener sincronizados los contratos de la API y las funcionalidades que los consumen.
-7. Documentar cualquier cambio significativo en la selección o configuración de las tecnologías.
-
-## 6. Entornos y despliegue
-
-Las aplicaciones y sus servicios deben configurarse mediante variables de entorno para separar los parámetros de desarrollo, pruebas y producción.
-
-La URL de la API, las credenciales de acceso a la base de datos y demás parámetros sensibles no deben codificarse directamente en el repositorio.
-
-Los servicios de despliegue concretos y sus procedimientos deben documentarse en la sección correspondiente de [Despliegue](../deployment/), una vez confirmados para el entorno vigente.
-
-## 7. Mantenimiento
-
-Si se reemplaza una tecnología o se introduce un componente nuevo, se debe actualizar este documento y revisar los ADR relacionados cuando el cambio afecte una decisión arquitectónica previamente registrada.
+La versión exacta de Node.js, el umbral de cobertura de Sonar y las credenciales de publicación se deben configurar antes de activar los workflows.
